@@ -34,7 +34,7 @@ Let $A$ be the set $`\{x,y,z\}`$ and $B$ be the set $`\{x,y\}`$
 1. Is $B$ a subset of $A$? ($B \subseteq A$) <br>
     Yes, $B$ is a subset of $A$
 1. What is the union of $A$ and $B$? ($A \cup B$) <br>
-    $`\{x,y,z\}` = A$
+    $`\{x,y,z\} = A`$
 1. What is the intersection of $A$ and $B$? ($A \cap B$) <br>
     $`\{x,y\} = B`$
 1. What is the cross product $A$ and $B$? ($A \times B$) <br>
