@@ -9,8 +9,20 @@ We cannot divide each side of equation $`(a + b)(a − b) = b(a − b)`$ by $`(a
 ## 0.11
 Let $`S(n) = 1 + 2 + \ldots + n`$ be the sum of the first $n$ natural numbers, and let $`C(n) = 1^3 + 2^3 + \ldots + n^3`$ be the sum of the first n cubes. Prove the following equalities by induction on $n$, to arrive at the curious conclusion that $`C(n) = S^2(n)`$ for every $n$.
 
-1. $`S(n) = \frac{1}{2} n(n+1)`$.
-1. $`C(n) = \frac{1}{4}(n^4 + 2n^3 + n^2) = \frac{1}{4} n^2(n+1)^2`$.
+1. $`S(n) = \frac{1}{2} n(n+1)`$.<br>
+*Basis*<br>
+$` S(1) = 1 = \frac{1}{2} 1(1+1)`$.<br>
+*Induction step*<br>
+$` S(k+1) = S(k) + (k+1) = \frac{1}{2} k(k+1) + (k+1) = \frac{1}{2} (k+1)(k+2)`$.
+1. $`C(n) = \frac{1}{4}(n^4 + 2n^3 + n^2) = \frac{1}{4} n^2(n+1)^2`$.<br>
+*Basis*<br>
+$` C(1) = 1 = \frac{1}{4} 1^2(1+1)^2`$<br>
+*Induction step*<br>
+$` C(k+1) = C(k) + (k+1)^3 = \frac{1}{4} k^2(k+1)^2 + (k+1)^3 = \frac{1}{4} (k+1)^2(k+2)^2`$.
+
+The induction step is valid for both $S(n)$ and $C(n)$. Therefore, $`C(n) = S^2(n)`$ for every $n$.
+
+$`S^2(n)`$ is $`(\frac{1}{2} n(n+1))^2 = \frac{1}{4} n^2(n+1)^2`$ which is equal to $`C(n)`$.
 
 ## 0.12
 Find the error in the following proof that all horses are the same color.
@@ -22,6 +34,8 @@ Find the error in the following proof that all horses are the same color.
 *Basis*: For $h = 1$. In any set containing just one horse, all horses clearly are the same color.
 
 *Induction step*: For $k ≥ 1$, assume that the claim is true for $h = k$ and prove that it is true for $h = k + 1$. Take any set $H$ of $k + 1$ horses. We show that all the horses in this set are the same color. Remove one horse from this set to obtain the set $H_1$ with just $k$ horses. By the induction hypothesis, all the horses in $H_1$ are the same color. Now replace the removed horse and remove a different one to obtain the set $H_2$. By the same argument, all the horses in $H_2$ are the same color. Therefore, all the horses in $H$ must be the same color, and the proof is complete.
+
+The horse removed in the first step may have a different color than the horse removed in the second step. Therefore, the induction step is invalid.
 
 ## 0.13
 Show that every graph with two or more nodes contains two nodes that have equal degrees.
