@@ -89,5 +89,15 @@ For each part, give a relation that satisfies the condition.
 1. Reflexive and symmetric but not transitive.
 1. Reflexive and transitive but not symmetric.
 1. Symmetric and transitive but not reflexive.
+
+Reflexive relation $R$ is when $`\forall a \in A, \ (a, a) \in R`$
+
+Symmetric relation $R$ is when $`\forall a, b \in A, \ (a, b) \in R \implies (b, a) \in R`$
+
+Transitive relation $R$ is when $`\forall a, b, c \in A, \ (a, b) \in R \land (b, c) \in R \implies (a, c) \in R`$
+
+1. Reflexive and symmetric but not transitive example is be coworker relation on the set of people (let's assume that everybody is a coworker with themselves)
+1. Reflexive and transitive but not symmetric example is greater than or equal to relation on the set of natural numbers
+1. Symmetric and transitive but not reflexive example is the relation "is a sibling of" on the set of people
 ## 0.8
 Consider the undirected graph $G = (V, E)$ where $V$, the set of nodes, is $\{1, 2, 3, 4\}$ and $E$, the set of edges, is $\{\{1, 2\}, \{2, 3\}, \{1, 3\}, \{2, 4\}, \{1, 4\}\}$. Draw the graph $G$. What are the degrees of each node? Indicate a path from node 3 to node 4 on your drawing of $G$.
