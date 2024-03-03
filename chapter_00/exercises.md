@@ -101,3 +101,12 @@ Transitive relation $R$ is when $`\forall a, b, c \in A, \ (a, b) \in R \land (b
 1. Symmetric and transitive but not reflexive example is the relation "is a sibling of" on the set of people
 ## 0.8
 Consider the undirected graph $G = (V, E)$ where $V$, the set of nodes, is $\{1, 2, 3, 4\}$ and $E$, the set of edges, is $\{\{1, 2\}, \{2, 3\}, \{1, 3\}, \{2, 4\}, \{1, 4\}\}$. Draw the graph $G$. What are the degrees of each node? Indicate a path from node 3 to node 4 on your drawing of $G$.
+
+```mermaid
+graph TD;
+    1---2;
+    2===3;
+    1---3;
+    2===4;
+    1---4;
+```
