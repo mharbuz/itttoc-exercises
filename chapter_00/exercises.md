@@ -53,5 +53,41 @@ Explain your answer.<br><br>
 The power set of a set $C$ is the set of all possible subsets of $C$. If $C$ has $c$ elements, then the power set of $C$ will have $2^c$ elements.
 
 ## 0.6
+Let X be the set $\{1, 2, 3, 4, 5\}$ and $Y$ be the set $\{6, 7, 8, 9, 10\}$. The unary function $f: X \to Y$ and the binary function $g: X \times Y \to Y$ are described in the following tables.
+
+| n | f(n)| 
+|---|---|
+|1 |6 |
+|2 |7 |
+|3 |6 |
+|4 |7 |
+|5 |6 |
+
+|g |6 |7 |8 |9 |10 |
+|---|---|---|---|---|---|
+|1 |10 |10 |10 |10 |10 |
+|2 |7 |8 |9 |10 |6 |
+|3 |7 |7 |8 |8 |9 |
+|4 |9 |8 |7 |6 |10 |
+|5 |6 |6 |6 |6 |6|
+
+1. What is the value of f(2)? <br>
+    $f(2) = 7$
+1. What are the range and domain of f?
+    - Range: $\{6, 7\}$
+    - Domain: $\{1, 2, 3, 4, 5\}$
+1. What is the value of g(2, 10)?<br>
+    $g(2, 10) = 6$
+1. What are the range and domain of g?<br>
+    - Range: $\{6, 7, 8, 9, 10\}$
+    - Domain: $\{1, 2, 3, 4, 5\}$
+1. What is the value of g(4, f(4))?<br>
+    $g(4, f(4)) = 8$
+
 ## 0.7
+For each part, give a relation that satisfies the condition.
+1. Reflexive and symmetric but not transitive.
+1. Reflexive and transitive but not symmetric.
+1. Symmetric and transitive but not reflexive.
 ## 0.8
+Consider the undirected graph $G = (V, E)$ where $V$, the set of nodes, is $\{1, 2, 3, 4\}$ and $E$, the set of edges, is $\{\{1, 2\}, \{2, 3\}, \{1, 3\}, \{2, 4\}, \{1, 4\}\}$. Draw the graph $G$. What are the degrees of each node? Indicate a path from node 3 to node 4 on your drawing of $G$.
