@@ -1,0 +1,16 @@
+version: "3.2"
+
+services:
+  latex:
+    image: "ghcr.io/peaceiris/latex:v1.1.0-full"
+    build:
+      context: .
+      cache_from:
+        - "ghcr.io/peaceiris/latex:v1.1.0-full"
+    container_name: "latex_v1.1.0"
+    volumes:
+      - ${PWD}/tex:/work
+    stdin_open: true
+    tty: true
+    working_dir: /work
+    command: latexmk -pdf -pvc
