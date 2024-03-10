@@ -32,11 +32,6 @@ jobs:
           chmod -c -R +rX "./" | while read line; do
             echo "::warning title=Invalid file permissions automatically fixed::$line"
           done
-      - name: Upload PDF file
-        uses: actions/upload-artifact@v4
-        with:
-          name: github-pages
-          path: index.html
   deploy:
     # Add a dependency to the build job
     needs: Create-PDF
