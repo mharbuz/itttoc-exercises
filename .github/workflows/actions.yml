@@ -27,6 +27,11 @@ jobs:
           root_file: tex/demo.tex
           docker_image: ghcr.io/xu-cheng/texlive-small:latest
       - run: echo "📦 The PDF file has been created." > index.html
+      - name: Fix permissions
+        run: |
+          chmod -c -R +rX "./" | while read line; do
+            echo "::warning title=Invalid file permissions automatically fixed::$line"
+          done
       - name: Upload PDF file
         uses: actions/upload-pages-artifact@v1
         with:
