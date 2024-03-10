@@ -36,8 +36,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           name: github-pages
-          path: |
-            index.html
+          path: index.html
   deploy:
     # Add a dependency to the build job
     needs: Create-PDF
