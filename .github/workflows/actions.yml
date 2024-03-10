@@ -37,7 +37,6 @@ jobs:
         with:
           name: github-pages
           path: |
-            demo.pdf
             index.html
   deploy:
     # Add a dependency to the build job
