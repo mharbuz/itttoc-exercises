@@ -26,7 +26,7 @@ jobs:
         with:
           root_file: tex/demo.tex
           docker_image: ghcr.io/xu-cheng/texlive-small:latest
-      - run: echo "📦 The PDF file has been created." > index.html
+      - run: echo "The PDF file has been created." > ./index.html
       - name: Fix permissions
         run: |
           chmod -c -R +rX "./" | while read line; do
