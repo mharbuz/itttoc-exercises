@@ -2,7 +2,7 @@
 for
 **[Introduction to the Theory Of Computation](https://www.amazon.com/Introduction-Theory-Computation-Michael-Sipser/dp/113318779X)**
 *Prof. Michael Sipser*
-![cover](assets/img/cover.jpg)
+![cover](pub/assets/img/cover.jpg)
 
 -----
 
