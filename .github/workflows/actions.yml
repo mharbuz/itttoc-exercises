@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: Compile LaTeX and deploy to GitHub Pages
 run-name: Generate PDF with answears and deploy to GitHub Pages
 on: [push]
 jobs:
