@@ -10,13 +10,13 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: tex/demo.tex
+          root_file: tex/chapter01.tex
           docker_image: ghcr.io/xu-cheng/texlive-small:latest
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload pub directory of repository
-          path: './pub'
+          path: "./pub"
   deploy:
     # Add a dependency to the build job
     needs: create-PDF
