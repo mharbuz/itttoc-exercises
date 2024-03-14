@@ -1,4 +1,6 @@
 \documentclass[12pt, a4paper]{article}
+%\usepackage{helvet}
+%\renewcommand{\familydefault}{\sfdefault}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \title{Chapter 0}
@@ -14,35 +16,57 @@
 
     \item[0.1]
 Examine the following formal descriptions of sets so that you understand which members they contain. Write a short informal English description of each set.
-1. $\{1, 3, 5, 7, \ldots \}$
-Set of odd, natural numbers.
-1. $\{x \ldots, -4, -2, 0, 2, 4 \ldots \}$
-Set of even, integer numbers.
+\begin{enumerate}
 
-1. $\{n \mid n = 2m \text{for some \textit{m}} \in \mathbb{N} \}$
+\item 
+$\{1, 3, 5, 7, \ldots \}$
+
+Set of odd, natural numbers.
+\item 
+$\{x \ldots, -4, -2, 0, 2, 4 \ldots \}$
+
+Set of even, integer numbers.
+\item 
+$\{n \mid n = 2m \text{for some \textit{m}} \in \mathbb{N} \}$
+
 Set of even, natural numbers.
-1. $\{n \mid n = 2m \text{for some \textit{m}} \in \mathbb{N}, \text{and} n = 3k \text{for some} k \in \mathbb{N} \}$
+\item 
+$\{n \mid n = 2m \text{for some \textit{m}} \in \mathbb{N}, \text{and} n = 3k \text{for some} k \in \mathbb{N} \}$
+
 Set of even, natural numbers that are also multiples of 3.
-1. $\{w \mid w  \text{is a string of \textit{0s} and \textit{1s} and \textit{w} equals the reverse of} w\}$
+\item 
+$\{w \mid w  \text{is a string of \textit{0s} and \textit{1s} and \textit{w} equals the reverse of} w\}$
+
 Set of strings of 0s and 1s that are palindroms 
-1. $\{ n \mid n \text{is an integer and}  n = n+1\}$
-Set of integers that are equal to their successor which is <u>empty set</u>
+\item $\{ n \mid n \text{is an integer and}  n = n+1\}$
+
+Set of integers that are equal to their successor which is \textit{empty set}
+\end{enumerate}
+
     \item[0.2]
 Write  formal descriptions  of the following sets.
-1. The set containing the numbers 1, 10, and 100
-    $\{1, 10, 100\}$
-1. The set containing all integers that are greater than 5
-    
 
+\begin{enumerate}
+\item The set containing the numbers 1, 10, and 100
+
+    $\{1, 10, 100\}$
+\item The set containing all integers that are greater than 5
+    
     $\{n \mid n > 5, n \in \mathbb{Z}\}$
-1.  The set containing all natural numbers that are less than 5:
+\item  The set containing all natural numbers that are less than 5:
+
     $\{n \mid n < 5, n \in \mathbb{N}\}$
-1. The set containing the string "aba":
+\item The set containing the string "aba":
+
     $\{"aba"\}$
-1. The set containing the empty string:
+\item The set containing the empty string:
+
     $\{\epsilon\}$
-1. The set containing nothing at all:
+\item The set containing nothing at all:
+
     $\emptyset$
+\end{enumerate}
+
     \item[0.3]
 Let $A$ be the set $\{x,y,z\}$ and $B$ be the set $\{x,y\}$
 1. Is $A$ a subset of $B$? ($A \subseteq B$) 
