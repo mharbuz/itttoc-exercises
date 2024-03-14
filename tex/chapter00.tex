@@ -68,61 +68,86 @@ Write  formal descriptions  of the following sets.
 \end{enumerate}
 
     \item[0.3]
+
 Let $A$ be the set $\{x,y,z\}$ and $B$ be the set $\{x,y\}$
-1. Is $A$ a subset of $B$? ($A \subseteq B$) 
+\begin{enumerate}
+\item Is $A$ a subset of $B$? ($A \subseteq B$) 
+
     No, $A$ is not a subset of $B$
-1. Is $B$ a subset of $A$? ($B \subseteq A$) 
+\item Is $B$ a subset of $A$? ($B \subseteq A$) 
+
     Yes, $B$ is a subset of $A$
-1. What is the union of $A$ and $B$? ($A \cup B$) 
+\item What is the union of $A$ and $B$? ($A \cup B$) 
+
     $\{x,y,z\} = A$
-1. What is the intersection of $A$ and $B$? ($A \cap B$) 
+\item What is the intersection of $A$ and $B$? ($A \cap B$) 
+
     $\{x,y\} = B$
-1. What is the cross product $A$ and $B$? ($A \times B$) 
+\item What is the cross product $A$ and $B$? ($A \times B$) 
+
     $\{(x,x), (x,y), (y,x), (y,y), (z,x), (z,y)\}$
-1. What is the power set of $B$? ($\mathcal{P}(B)$) 
-    $\{\emptyset, \{x\}, \{y\}, \{x,y\}\}$
+
+\item What is the power set of $B$? 
+
+$\mathcal{P}(B) = \{\emptyset, \{x\}, \{y\}, \{x,y\}\}$
+\end{enumerate}
 
     \item[0.4]
 If $A$ has  $a$  elements and  $B$  has  $b$  elements, how many elements are in  $A \times B$? 
 Explain your answer.
+
 The cross product of two sets $A$ and $B$ is the set of all possible ordered pairs of elements from $A$ and $B$. If $A$ has $a$ elements and $B$ has $b$ elements, then the cross product $A \times B$ will have $a \cdot b$ elements.
 
     \item[0.5]
 If $C$ is a set with $c$ elements, how many elements are in the power set of $C$? 
 Explain your answer.
-The power set of a set $C$ is the set of all possible subsets of $C$. If $C$ has $c$ elements, then the power set of $C$ will have $2^c$ elements.
+
+The power set of a set $C$ is the set of all possible subsets of $C$. If $C$ has $c$ elements, then the power set of $C$ will have $2^c$ elements. Thats  because every element can be present or absent in every subset, so there are $2^c$ possible combinations of elements in the power set of $C$.
 
     \item[0.6]
 Let X be the set $\{1, 2, 3, 4, 5\}$ and $Y$ be the set $\{6, 7, 8, 9, 10\}$. The unary function $f: X \to Y$ and the binary function $g: X \times Y \to Y$ are described in the following tables.
 
-| n | f(n)| 
-|---|---|
-|1 |6 |
-|2 |7 |
-|3 |6 |
-|4 |7 |
-|5 |6 |
+\begin{tabular}{ c | c }
+    n & f(n) \\
+    \hline
+    1 & 6 \\
+    2 & 7 \\
+    3 & 6 \\
+    4 & 7 \\
+    5 & 6 \\
+\end{tabular}
+\begin{tabular}{ c | c | c | c | c | c }
+    g(x,y) & 6 & 7 & 8 & 9 & 10 \\
+    \hline
+    1 & 10 & 10 & 10 & 10 & 10 \\
+    2 & 7 & 8 & 9 & 10 & 6 \\
+    3 & 7 & 7 & 8 & 8 & 9 \\
+    4 & 9 & 8 & 7 & 6 & 10 \\
+    5 & 6 & 6 & 6 & 6 & 6 \\
+\end{tabular}
+\begin{enumerate}
+\item What is the value of f(2)? 
 
-|g |6 |7 |8 |9 |10 |
-|---|---|---|---|---|---|
-|1 |10 |10 |10 |10 |10 |
-|2 |7 |8 |9 |10 |6 |
-|3 |7 |7 |8 |8 |9 |
-|4 |9 |8 |7 |6 |10 |
-|5 |6 |6 |6 |6 |6|
-
-1. What is the value of f(2)? 
     $f(2) = 7$
-1. What are the range and domain of f?
-    - Range: $\{6, 7\}$
-    - Domain: $\{1, 2, 3, 4, 5\}$
-1. What is the value of g(2, 10)?
+\item What are the range and domain of f?
+\begin{itemize}
+    \item Range: $\{6, 7\}$
+    \item Domain: $\{1, 2, 3, 4, 5\}$
+\end{itemize}
+
+\item What is the value of $g(2, 10)$?
+
     $g(2, 10) = 6$
-1. What are the range and domain of g?
-    - Range: $\{6, 7, 8, 9, 10\}$
-    - Domain: $\{1, 2, 3, 4, 5\}$
-1. What is the value of g(4, f(4))?
+\item What are the range and domain of g?
+\begin{itemize}
+    \item Range: $\{6, 7, 8, 9, 10\}$
+    \item Domain: $\{1, 2, 3, 4, 5\}$
+\end{itemize}
+
+\item What is the value of $g(4, f(4))$?
+
     $g(4, f(4)) = 8$
+\end{enumerate}
 
     \item[0.7]
 For each part, give a relation that satisfies the condition.
