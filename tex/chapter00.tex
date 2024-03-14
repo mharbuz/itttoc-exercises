@@ -10,7 +10,9 @@
 
 \section{Exercises}
 
-0.1
+\begin{enumerate}
+
+    \item[0.1]
 Examine the following formal descriptions of sets so that you understand which members they contain. Write a short informal English description of each set.
 1. $\{1, 3, 5, 7, \ldots \}$
 Set of odd, natural numbers.
@@ -25,7 +27,7 @@ Set of even, natural numbers that are also multiples of 3.
 Set of strings of 0s and 1s that are palindroms 
 1. $\{ n \mid n \text{is an integer and}  n = n+1\}$
 Set of integers that are equal to their successor which is <u>empty set</u>
-0.2
+    \item[0.2]
 Write  formal descriptions  of the following sets.
 1. The set containing the numbers 1, 10, and 100
     $\{1, 10, 100\}$
@@ -41,7 +43,7 @@ Write  formal descriptions  of the following sets.
     $\{\epsilon\}$
 1. The set containing nothing at all:
     $\emptyset$
-0.3
+    \item[0.3]
 Let $A$ be the set $\{x,y,z\}$ and $B$ be the set $\{x,y\}$
 1. Is $A$ a subset of $B$? ($A \subseteq B$) 
     No, $A$ is not a subset of $B$
@@ -56,17 +58,17 @@ Let $A$ be the set $\{x,y,z\}$ and $B$ be the set $\{x,y\}$
 1. What is the power set of $B$? ($\mathcal{P}(B)$) 
     $\{\emptyset, \{x\}, \{y\}, \{x,y\}\}$
 
-0.4
+    \item[0.4]
 If $A$ has  $a$  elements and  $B$  has  $b$  elements, how many elements are in  $A \times B$? 
 Explain your answer.
 The cross product of two sets $A$ and $B$ is the set of all possible ordered pairs of elements from $A$ and $B$. If $A$ has $a$ elements and $B$ has $b$ elements, then the cross product $A \times B$ will have $a \cdot b$ elements.
 
-0.5
+    \item[0.5]
 If $C$ is a set with $c$ elements, how many elements are in the power set of $C$? 
 Explain your answer.
 The power set of a set $C$ is the set of all possible subsets of $C$. If $C$ has $c$ elements, then the power set of $C$ will have $2^c$ elements.
 
-0.6
+    \item[0.6]
 Let X be the set $\{1, 2, 3, 4, 5\}$ and $Y$ be the set $\{6, 7, 8, 9, 10\}$. The unary function $f: X \to Y$ and the binary function $g: X \times Y \to Y$ are described in the following tables.
 
 | n | f(n)| 
@@ -98,22 +100,23 @@ Let X be the set $\{1, 2, 3, 4, 5\}$ and $Y$ be the set $\{6, 7, 8, 9, 10\}$. Th
 1. What is the value of g(4, f(4))?
     $g(4, f(4)) = 8$
 
-0.7
+    \item[0.7]
 For each part, give a relation that satisfies the condition.
 1. Reflexive and symmetric but not transitive.
 1. Reflexive and transitive but not symmetric.
 1. Symmetric and transitive but not reflexive.
 
-Reflexive relation $R$ is when $\forall a \in A, \ (a, a) \in R$
+Reflexive relation $R$ is when $\forall a \in A, (a, a) \in R$
 
-Symmetric relation $R$ is when $\forall a, b \in A, \ (a, b) \in R \implies (b, a) \in R$
+Symmetric relation $R$ is when $\forall a, b \in A, (a, b) \in R \implies (b, a) \in R$
 
-Transitive relation $R$ is when $\forall a, b, c \in A, \ (a, b) \in R \land (b, c) \in R \implies (a, c) \in R$
+Transitive relation $R$ is when $\forall a, b, c \in A, (a, b) \in R \land (b, c) \in R \implies (a, c) \in R$
 
 1. Reflexive and symmetric but not transitive example is be coworker relation on the set of people (let's assume that everybody is a coworker with themselves)
 1. Reflexive and transitive but not symmetric example is greater than or equal to relation on the set of natural numbers
 1. Symmetric and transitive but not reflexive example is the relation "is a sibling of" on the set of people
-0.8
+
+    \item[0.8]
 Consider the undirected graph $G = (V, E)$ where $V$, the set of nodes, is $\{1, 2, 3, 4\}$ and $E$, the set of edges, is $\{\{1, 2\}, \{2, 3\}, \{1, 3\}, \{2, 4\}, \{1, 4\}\}$. Draw the graph $G$. What are the degrees of each node? Indicate a path from node 3 to node 4 on your drawing of $G$.
 
 ```mermaid
@@ -125,7 +128,7 @@ graph TD;
     1---4;
 ```
 
-0.9
+    \item[0.9]
 Write a formal description of the following graph.
 ```mermaid
 graph TD;
@@ -142,9 +145,12 @@ graph TD;
 $G = (V, E)$ where 
 
 $V = \{1, 2, 3, 4, 5, 6\}$ and $E = \{\{1, 4\}, \{1, 5\}, \{1, 6\}, \{2, 4\}, \{2, 5\}, \{2, 6\}, \{3, 4\}, \{3, 5\}, \{3, 6\}\}$
+\end{enumerate}
+\section{Problems}
 
+\begin{enumerate}
 
-0.10
+    \item[0.10]
 Find the error in the following proof that $2 = 1$. 
 
 Consider the equation $a = b$. Multiply both sides by a to obtain 
@@ -164,7 +170,7 @@ $a + b = b$
 
 We cannot divide each side of equation $(a + b)(a - b) = b(a - b)$ by $(a - b)$ because $a = b$ implies $a - b = 0$ and division by zero is undefined.
 
-0.11
+    \item[0.11]
 Let $S(n) = 1 + 2 + \ldots + n$ be the sum of the first $n$ natural numbers, and let $C(n) = 1^3 + 2^3 + \ldots + n^3$ be the sum of the first n cubes. Prove the following equalities by induction on $n$, to arrive at the curious conclusion that $C(n) = S^2(n)$ for every $n$.
 
 1. $S(n) = \frac{1}{2} n(n+1)$.
@@ -182,7 +188,7 @@ The induction step is valid for both $S(n)$ and $C(n)$. Therefore, $C(n) = S^2(n
 
 $S^2(n)$ is $(\frac{1}{2} n(n+1))^2 = \frac{1}{4} n^2(n+1)^2$ which is equal to $C(n)$.
 
-0.12
+    \item[0.12]
 Find the error in the following proof that all horses are the same color.
 
 **CLAIM**: In any set of h horses, all horses are the same color.
@@ -193,16 +199,18 @@ Find the error in the following proof that all horses are the same color.
 
 The horse removed in the first step may have a different color than the horse removed in the second step. Therefore, the induction step is invalid.
 
-0.13
+\item[0.13]
 Show that every graph with two or more nodes contains two nodes that have equal degrees.
 
-0.14
+\item[0.14]
 Ramsey's theorem. 
 
 Let $G$ be a graph. A clique in $G$ is a subgraph in which every two nodes are connected by an edge. An anti-clique, also called an independent set, is a subgraph in which every two nodes are not connected by an edge. Show that every graph with $n$ nodes contains either a clique or an anti-clique with at least $\frac{1}{2} log_2(n)$ nodes.
 
-0.15
-Use Theorem 0.25 to derive a formula for calculating the size of the monthly payment for a mortgage in terms of the principal P, the interest rate I, and the number of payments t. Assume that after t payments have been made, the loan amount is reduced to 0. Use the formula to calculate the dollar amount of each monthly payment for a 30-year mortgage with 360 monthly payments on an initial loan amount of $100,000 with a 5% annual interest rate.
+
+\item[0.15]
+Use Theorem 0.25 to derive a formula for calculating the size of the monthly payment for a mortgage in terms of the principal P, the interest rate I, and the number of payments t. Assume that after t payments have been made, the loan amount is reduced to 0. Use the formula to calculate the dollar amount of each monthly payment for a 30-year mortgage with 360 monthly payments on an initial loan amount of \$100,000 with a 5% annual interest rate.
+
 
 **Theorem 0.25**
 
@@ -210,4 +218,5 @@ $\forall t \geq 0$
 
 
 $P_t=PM^t-Y\frac{M^t-1}{M-1}$
+\end{enumerate}
 \end{document}
