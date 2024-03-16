@@ -1,6 +1,29 @@
 # <--------- VSCODE --------->
 
 
+# <--------- WEBPACK --------->
+
+/homepage/node_modules
+/homepage/test/js
+/homepage/test/browsertest/js
+/homepage/test/fixtures/temp-*
+/homepage/test/temp
+/homepage/test/ChangesAndRemovals
+/homepage/test/**/dev-defaults.webpack.lock
+/homepage/benchmark/js
+/homepage/benchmark/fixtures
+/homepage/examples/**/dist
+/homepage/assembly/**/*.wat
+/homepage/assembly/**/*.wasm
+/homepage/coverage
+/homepage/.nyc_output
+/homepage/.jest-cache
+/homepage/.DS_Store
+/homepage/*.log
+/homepage/.cache
+/homepage/.eslintcache
+/homepage/.cspellcache
+
 # <--------- TEX --------->
 
 ## Core latex/pdflatex auxiliary files:
