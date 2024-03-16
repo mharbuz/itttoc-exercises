@@ -14,6 +14,10 @@ jobs:
             tex/chapter00.tex
             tex/chapter01.tex
           docker_image: ghcr.io/xu-cheng/texlive-small:latest
+      - name: Copy the generated PDFs
+        run: |
+          cp tex/chapter00.pdf pub/
+          cp tex/chapter01.pdf pub/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
