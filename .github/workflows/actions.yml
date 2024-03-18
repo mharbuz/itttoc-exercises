@@ -18,8 +18,8 @@ jobs:
           pre_compile: "tlmgr update --self && tlmgr install import"
       - name: Copy the generated PDFs
         run: |
-          cp chapter00.pdf pub/
-          cp chapter01.pdf pub/
+          cp tex/chapter00.pdf pub/
+          cp tex/chapter01.pdf pub/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
