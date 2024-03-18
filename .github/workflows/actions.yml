@@ -2,6 +2,15 @@ name: Compile LaTeX and deploy to GitHub Pages
 run-name: Generate PDF with answears and deploy to GitHub Pages
 on: [push]
 jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: xu-cheng/texlive-action@v2
+        with:
+          docker_image: ghcr.io/xu-cheng/texlive-full:20230801
+          run: |
+            tlmgr install subfiles
   create-PDF:
     runs-on: ubuntu-latest
     steps:
@@ -13,9 +22,7 @@ jobs:
           root_file: |
             tex/chapter00.tex
             tex/chapter01.tex
-          docker_image: ghcr.io/xu-cheng/texlive-small:latestrun: |
-          run: |
-            tlmgr install subfiles
+          docker_image: ghcr.io/xu-cheng/texlive-small:latestrun
       - name: Copy the generated PDFs
         run: |
           cp chapter00.pdf pub/
