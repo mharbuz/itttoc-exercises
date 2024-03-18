@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: xu-cheng/texlive-action@v2
         with:
-          docker_image: ghcr.io/xu-cheng/texlive-full:20230801
+          docker_image: ghcr.io/xu-cheng/texlive-small:latestrun
           run: |
             tlmgr install subfiles
   create-PDF:
