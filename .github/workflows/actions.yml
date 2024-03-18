@@ -10,6 +10,7 @@ jobs:
         with:
           docker_image: ghcr.io/xu-cheng/texlive-small:latest
           run: |
+            tlmgr update --self
             tlmgr install subfiles
   create-PDF:
     runs-on: ubuntu-latest
