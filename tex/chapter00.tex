@@ -4,7 +4,7 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{tikz} 
-\usepackage{subfiles}
+\usepackage{import}
 \title{Chapter 0}
 \author{Maciej Harbuz}
 
@@ -13,9 +13,11 @@
 \maketitle
 
 \section{Exercises}
-\subfile{chapter00-exercises}
+%\subfile{chapter00-exercises}
+\import{./}{chapter00-exercises.tex}
 
 \section{Problems}
-\subfile{chapter00-problems}
+%\subfile{tex/chapter00-problems}
+\import{./}{chapter00-problems.tex}
 
 \end{document}
