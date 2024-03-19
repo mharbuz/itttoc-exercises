@@ -2,7 +2,7 @@ name: Compile LaTeX and deploy to GitHub Pages
 run-name: Generate PDF with answears and deploy to GitHub Pages
 on: [push]
 jobs:
-  build-front:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
@@ -15,11 +15,6 @@ jobs:
         run: |
           cd homepage
           npm run build-prod
-  create-PDF:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v4
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
@@ -40,7 +35,7 @@ jobs:
           path: "./pub"
   deploy:
     # Add a dependency to the build job
-    needs: create-PDF
+    needs: build
 
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
