@@ -26,6 +26,7 @@
 
 /homepage/dist/*
 !/homepage/dist/index.html
+!/homepage/dist/assets
 
 # <--------- TEX --------->
 
