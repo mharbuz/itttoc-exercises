@@ -12,7 +12,9 @@ jobs:
           cd homepage
           npm install
       - name: Build for production
-        run: npm run build-prod
+        run: |
+          cd homepage
+          npm run build-prod
   create-PDF:
     runs-on: ubuntu-latest
     steps:
