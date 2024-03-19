@@ -24,6 +24,9 @@
 /homepage/.eslintcache
 /homepage/.cspellcache
 
+/homepage/dist/*
+!/homepage/dist/index.html
+
 # <--------- TEX --------->
 
 ## Core latex/pdflatex auxiliary files:
