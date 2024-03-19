@@ -26,13 +26,13 @@ jobs:
           pre_compile: "tlmgr update --self && tlmgr install import"
       - name: Copy the generated PDFs
         run: |
-          cp tex/chapter00.pdf pub/
-          cp tex/chapter01.pdf pub/
+          cp tex/chapter00.pdf dist/
+          cp tex/chapter01.pdf dist/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload pub directory of repository
-          path: "./pub"
+          path: "./dist"
   deploy:
     # Add a dependency to the build job
     needs: build
