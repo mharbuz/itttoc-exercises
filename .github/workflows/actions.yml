@@ -2,6 +2,15 @@ name: Compile LaTeX and deploy to GitHub Pages
 run-name: Generate PDF with answears and deploy to GitHub Pages
 on: [push]
 jobs:
+  build-front:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@master
+      - name: Install Dependencies
+        run: npm install
+      - name: Build for production
+        run: npm run build-prod
   create-PDF:
     runs-on: ubuntu-latest
     steps:
