@@ -19,14 +19,16 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
+          work_in_root_file_dir: true
           root_file: |
             tex/chapter00.tex
             tex/chapter01.tex
           docker_image: ghcr.io/xu-cheng/texlive-small:latest
+          pre_compile: "tlmgr update --self && tlmgr install import"
       - name: Copy the generated PDFs
         run: |
-          cp chapter00.pdf pub/
-          cp chapter01.pdf pub/
+          cp tex/chapter00.pdf pub/
+          cp tex/chapter01.pdf pub/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
