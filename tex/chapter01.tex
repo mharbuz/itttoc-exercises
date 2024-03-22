@@ -5,6 +5,15 @@
 \usepackage{amsmath}
 \usepackage{tikz} 
 \usepackage{import}
+\usepackage{float}
+\usetikzlibrary{automata, positioning, arrows}
+\tikzset{
+    ->, % makes the edges directed
+    every state/.style={thick, fill=gray!10}, % sets the properties for each ’state’ node
+    node distance=3cm, % specifies the minimum distance between two nodes. Change if necessary.
+    initial text=$ $, % sets the text that appears on the start arrow
+    >=stealth, % makes the arrow heads bold
+}
 
 \begin{document}
 

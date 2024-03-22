@@ -1,26 +1,32 @@
 \begin{enumerate}
 
     \item[1.1]
-
           The following are the state diagrams of two DFAs, $M_1$ and $M_2$. Answer the following questions about each of these machines.
 
-          \begin{tikzpicture}[node distance={25mm}, thick, main/.style = {draw, circle}]
-              \node[main] (1) {$1$};
-              \node[main] (2) [right of=1] {$2$};
-              \node[main] (3) [right of=2] {$3$};
-              \node[main] (4) [below of=1] {$4$};
-              \node[main] (5) [right of=4] {$5$};
-              \node[main] (6) [right of=5] {$6$};
-              \draw[-] (1) -- (4);
-              \draw[-] (1) -- (5);
-              \draw[-] (1) -- (6);
-              \draw[-] (2) -- (4);
-              \draw[-] (2) -- (5);
-              \draw[-] (2) -- (6);
-              \draw[-] (3) -- (4);
-              \draw[-] (3) -- (5);
-              \draw[-] (3) -- (6);
-          \end{tikzpicture}
+          \begin{figure}[H]
+              \centering
+              \begin{tikzpicture}
+                  \node[state, initial] (q1) {$q_1$};
+                  \node[state, accepting, right of=q1] (q2) {$q_2$};
+                  \node[state] at (1.5, -2) (q3) {$q_3$};
+                  \draw (q1) edge[loop above] node{$b$} (q1)
+                  (q1) edge[bend left, above] node{$a$} (q2)
+                  (q2) edge[bend left, below] node{$a,b$} (q3)
+                  (q3) edge[bend left, above] node{$a$} (q2)
+                  (q3) edge[bend left, below] node{$b$} (q1);
+              \end{tikzpicture}
+              \begin{tikzpicture}
+                  \node[state, initial] (q1) {$q_1$};
+                  \node[state, accepting, right of=q1] (q2) {$q_2$};
+                  \node[state] at (1.5, -2) (q3) {$q_3$};
+                  \draw (q1) edge[loop above] node{$b$} (q1)
+                  (q1) edge[bend left, above] node{$a$} (q2)
+                  (q2) edge[bend left, below] node{$a,b$} (q3)
+                  (q3) edge[bend left, above] node{$a$} (q2)
+                  (q3) edge[bend left, below] node{$b$} (q1);
+              \end{tikzpicture}
+              \caption{$M_1$ and $M_2$}
+          \end{figure}
 
           \begin{enumerate}
               \item What is the start state?
