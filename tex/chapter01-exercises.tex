@@ -17,13 +17,17 @@
               \end{tikzpicture}
               \begin{tikzpicture}
                   \node[state, initial] (q1) {$q_1$};
-                  \node[state, accepting, right of=q1] (q2) {$q_2$};
-                  \node[state] at (1.5, -2) (q3) {$q_3$};
-                  \draw (q1) edge[loop above] node{$b$} (q1)
-                  (q1) edge[bend left, above] node{$a$} (q2)
-                  (q2) edge[bend left, below] node{$a,b$} (q3)
+                  \node[state, right of=q1] (q2) {$q_2$};
+                  \node[state, below of=q1] (q3) {$q_3$};
+                  \node[state, accepting, below of=q2] (q4) {$q_4$};
+                  \draw (q1) edge[loop above] node{$a$} (q1)
+                  (q1) edge[bend left, above] node{$b$} (q2)
+                  (q2) edge[bend left, below] node{$a$} (q3)
+                  (q2) edge[bend left, right] node{$b$} (q4)
                   (q3) edge[bend left, above] node{$a$} (q2)
-                  (q3) edge[bend left, below] node{$b$} (q1);
+                  (q3) edge[bend left, right] node{$b$} (q1)
+                  (q4) edge[bend left, below] node{$a$} (q3)
+                  (q4) edge[loop right] node{$b$} (q4);
               \end{tikzpicture}
               \caption{$M_1$ and $M_2$}
           \end{figure}
@@ -36,8 +40,45 @@
                     $M_2: q_1$
 
               \item What is the set of accept states?
+
+                    $M_1: \{q_2\}$
+
+                    $M_2: \{q_4\}$
               \item What sequence of states does the machine go through on input $aabb$?
+
+                    $M_1: q_1 \rightarrow q_2 \rightarrow q_3 \rightarrow q_1 \rightarrow q_1$
+
+                    $M_2: q_1 \rightarrow q_2 \rightarrow q_4 \rightarrow q_4 \rightarrow q_4$
               \item Does the machine accept the string $aabb$?
+
+                    $M_1:$ No
+
+                    $M_2:$ Yes
               \item Does the machine accept the string $\epsilon$?
+
+                    $M_1:$ No
+
+                    $M_2:$ No
           \end{enumerate}
+
+    \item[1.2]
+
+          Give the formal description of the machines $M_1$ and $M_2$ pictured in Exercise 1.1.
+
+          $M_1 = (Q, \Sigma_1, \delta_1, q_1, \{q_2\})$
+
+          $Q = \{q_1, q_2, q_3\}$
+
+          $\Sigma_1 = \{a, b\}$
+
+          $\delta_1 = \{((q_1, a), q_2), ((q_1, b), q_1), ((q_2, a), q_3), ((q_2, b), q_3), ((q_3, a), q_2), ((q_3, b), q_1)\}$\\
+
+          $M_2 = (Q, \Sigma_2, \delta_2, q_1, \{q_4\})$
+
+          $Q = \{q_1, q_2, q_3, q_4\}$
+
+          $\Sigma_2 = \{a, b\}$
+
+          $\delta_2 = \{((q_1, a), q_1), ((q_1, b), q_2), ((q_2, a), q_3), ((q_2, b), q_4), ((q_3, a), q_2), ((q_3, b), q_1), ((q_4, a), q_3), ((q_4, b), q_4)\}$
+
 \end{enumerate}
