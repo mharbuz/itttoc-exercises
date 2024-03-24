@@ -263,7 +263,55 @@
                         \end{tikzpicture}
                         \caption{$\overline{D}$ and $D$}
                     \end{figure}
-              \item $\{w|w~\text{is any string not in }(ab+)^{\ast}\}$
+              \item $E = \{w|w~\text{is any string not in }(ab^+)^{\ast}\}$
+
+                    $\overline{E} = \{w|w~\text{is any string in }(ab^+)^{\ast}\}$
+
+                    \begin{itemize}
+                        \item assuming $ab^+$ means $a$ followed by one or more $b$.
+                              \begin{figure}[H]
+                                  \centering
+                                  \begin{tikzpicture}
+                                      \node[state, accepting, initial] (q1) {};
+                                      \node[state, accepting, right of=q1] (q2) {};
+                                      \draw (q1) edge[bend left, above] node{$a$} (q2)
+                                      (q2) edge[bend left, below] node{$a$} (q1)
+                                      (q2) edge[loop above] node{$b$} (q2);
+                                  \end{tikzpicture}
+                                  \begin{tikzpicture}
+                                      \node[state, initial] (q1) {};
+                                      \draw (q1) edge[loop above] node{$a,b$} (q1);
+                                  \end{tikzpicture}
+                                  \caption{$\overline{E}$ and $E$}
+                              \end{figure}
+                        \item assuming $ab^+$ means $ab$ one or more times.
+                              \begin{figure}[H]
+                                  \centering
+                                  \begin{tikzpicture}
+                                      \node[state, accepting, initial] (q1) {};
+                                      \node[state, right of=q1] (q2) {};
+                                      \node[state, accepting, right of=q2] (q3) {};
+                                      \node[state, right of=q3] (q4) {};
+                                      \draw (q1) edge[bend left, above] node{$a$} (q2)
+                                      (q2) edge[bend left, above] node{$b$} (q3)
+                                      (q3) edge[bend left, below] node{$a$} (q2)
+                                      (q3) edge[bend left, below] node{$b$} (q4)
+                                      (q4) edge[loop above] node{$a,b$} (q4);
+                                  \end{tikzpicture}
+                                  \begin{tikzpicture}
+                                      \node[state, initial] (q1) {};
+                                      \node[state, accepting, right of=q1] (q2) {};
+                                      \node[state, right of=q2] (q3) {};
+                                      \node[state, accepting, right of=q3] (q4) {};
+                                      \draw (q1) edge[bend left, above] node{$a$} (q2)
+                                      (q2) edge[bend left, above] node{$b$} (q3)
+                                      (q3) edge[bend left, below] node{$a$} (q2)
+                                      (q3) edge[bend left, below] node{$b$} (q4)
+                                      (q4) edge[loop above] node{$a,b$} (q4);
+                                  \end{tikzpicture}
+                                  \caption{$\overline{E}$ and $E$}
+                              \end{figure}
+                    \end{itemize}
               \item $\{w|w~\text{is any string not in }a^{\ast} \cup b^{\ast}\}$
               \item $\{w|w~\text{is any string that doesn’t contain exactly two }a\text{’s}\}$
               \item $\{w|w~\text{is any string except }a\text{ and }b\}$
