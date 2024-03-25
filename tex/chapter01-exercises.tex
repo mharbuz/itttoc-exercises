@@ -314,7 +314,33 @@
                                   \caption{$\overline{E}$ and $E$}
                               \end{figure}
                     \end{itemize}
-              \item $\{w|w~\text{is any string not in }a^{\ast} \cup b^{\ast}\}$
+              \item $F = \{w|w~\text{is any string not in }a^{\ast} \cup b^{\ast}\}$
+
+                    $\overline{F} = \{w|w~\text{is any string in }a^{\ast} \cup b^{\ast}\}$
+                    \begin{figure}[H]
+                        \centering
+                        \begin{tikzpicture}
+                            \node[state, accepting, initial] (q1) {};
+                            \node[state, accepting, right of=q1] (q2) {};
+                            \node[state, right of=q2] (q3) {};
+                            \draw (q1) edge[loop above] node{$a$} (q1)
+                            (q1) edge[above] node{$b$} (q2)
+                            (q2) edge[loop above] node{$b$} (q2)
+                            (q2) edge[above] node{$a$} (q3)
+                            (q3) edge[loop above] node{$a,b$} (q3);
+                        \end{tikzpicture}
+                        \begin{tikzpicture}
+                            \node[state, initial] (q1) {};
+                            \node[state, right of=q1] (q2) {};
+                            \node[state, accepting, right of=q2] (q3) {};
+                            \draw (q1) edge[loop above] node{$a$} (q1)
+                            (q1) edge[above] node{$b$} (q2)
+                            (q2) edge[loop above] node{$b$} (q2)
+                            (q2) edge[above] node{$a$} (q3)
+                            (q3) edge[loop above] node{$a,b$} (q3);
+                        \end{tikzpicture}
+                        \caption{$\overline{F}$ and $F$}
+                    \end{figure}
               \item $\{w|w~\text{is any string that doesn’t contain exactly two }a\text{’s}\}$
               \item $\{w|w~\text{is any string except }a\text{ and }b\}$
           \end{enumerate}
