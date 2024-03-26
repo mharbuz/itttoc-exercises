@@ -418,7 +418,8 @@
                             (q2) edge[bend left, above] node{$0$} (q3)
                             (q3) edge[loop above] node{$0$} (q3)
                             (q3) edge[bend left, below] node{$1$} (q2)
-                            (q1) edge[bend right, below] node{$0$} (q4);
+                            (q1) edge[bend right, below] node{$0$} (q4)
+                            (q4) edge[loop above] node{$0,1$} (q4);
                         \end{tikzpicture}
                     \end{figure}
               \item $\{w|w~ \text{contains at least three }1\text{'s}\}$
