@@ -1,0 +1,27 @@
+\begin{enumerate}
+
+    \item [1.13]
+          
+          Let $F$ be the language of all strings over $\{0,1\}$ that do not contain a pair of $1$s that are separated by an odd number of symbols. Give the state diagram of a DFA with five states that recognizes $F$. (You may find it helpful first to find a 4-state NFA for the complement of $F$.) blab 
+          
+          $\overline{F} = \{w|w~ \text{contains a pair of }1\text{'s that are separated by an odd number of symbols}\}$
+          
+          \begin{figure}[H]
+              \centering
+              \begin{tikzpicture}
+                  \node[state, initial] (q0) {};
+                  \node[state, right of=q0] (q1) {};
+                  \node[state, above of=q1] (q2) {};
+                  \node[state, accepting, right of=q1] (q3) {};
+                  \draw
+                  (q0) edge[above] node{$1$} (q1)
+                  (q0) edge[bend right, below] node{$1$} (q2)
+                  (q2) edge[above] node{$1$} (q3)
+                  (q2) edge[bend right, above] node{$1$} (q3)
+                  (q3) edge[loop above] node{$0$} (q3);
+              \end{tikzpicture}
+              \caption{NFA with four states that recognizes $\overline{F}$}
+          \end{figure}
+          \item [1.14]
+          Give regular expressions generating the languages of Exercise 1.6.
+\end{enumerate}
