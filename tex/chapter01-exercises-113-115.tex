@@ -22,6 +22,64 @@
               \end{tikzpicture}
               \caption{NFA with four states that recognizes $\overline{F}$}
           \end{figure}
-          \item [1.14]
+    \item [1.14]
           Give regular expressions generating the languages of Exercise 1.6.
+          \begin{enumerate}
+              \item $\{w|w~ \text{begins with a }1\text{ and ends with a }0\}$
+                    \begin{align*}
+                        1(0+1)^*0
+                    \end{align*}
+              \item $\{w|w~ \text{contains at least three }1\text{'s}\}$
+                    \begin{align*}
+                        (0+1)^*1(0+1)^*1(0+1)^*1(0+1)^*
+                    \end{align*}
+              \item $\{w|w~ \text{contains the substring }0101\}$
+                    \begin{align*}
+                        (0+1)^*0101(0+1)^*
+                    \end{align*}
+              \item $\{w|w~ \text{has length at least }3\text{ and its third symbol is a }0\}$
+                    \begin{align*}
+                        (0+1)^{2}0(0+1)^*
+                    \end{align*}
+              \item $\{w|w~ \text{starts with }0\text{ and has odd length, or starts with }1\text{ and has even length}\}$
+                    \begin{align*}
+                        0(0+1)((0+1)(0+1))^* + 1((0+1)(0+1))^*
+                    \end{align*}
+              \item $\{w|w~ \text{doesn't contain the substring }110\}$
+                    \begin{align*}
+                        (0+1)^*- 110
+                    \end{align*}
+              \item $\{w|\text{the length of }w\text{ is at most }5\}$
+                    \begin{align*}
+                        (0+1)?(0+1)?(0+1)?(0+1)?(0+1)?
+                    \end{align*}
+              \item $\{w|w~ \text{is any string except }11\text{ and }111\}$
+                    \begin{align*}
+                        (0+1)^* - 11 - 111
+                    \end{align*}
+              \item $\{w|\text{ every odd position of }w\text{ is a }1\}$
+                    \begin{align*}
+                        1((0+1)1)^*
+                    \end{align*}
+              \item $\{w|w~ \text{contains at least two }0\text{'s and at most one }1\}$
+                    \begin{align*}
+
+                    \end{align*}
+              \item $\{\epsilon,0\}$
+                    \begin{align*}
+                        0?
+                    \end{align*}
+              \item $\{w|w~ \text{contains an even number of }0\text{'s, or contains exactly two }1\text{'s}\}$
+                    \begin{align*}
+
+                    \end{align*}
+              \item The empty set
+                    \begin{align*}
+                        \emptyset
+                    \end{align*}
+              \item All strings except the empty string
+                    \begin{align*}
+                        (0+1)^+
+                    \end{align*}
+          \end{enumerate}
 \end{enumerate}
