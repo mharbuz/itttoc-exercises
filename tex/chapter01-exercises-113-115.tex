@@ -26,31 +26,68 @@
           \begin{enumerate}
               \item Show that if $M$ is a DFA that recognizes language $B$, swapping the accept and nonaccept states in $M$ yields a new DFA recognizing the complement of $B$.Conclude that the class of regular languages is closed under complement.
 
-              Every state in DFA has a transition for every symbol in the alphabet. For every possible word, the DFA will end up in either an accept state or a nonaccept state. If we swap the accept and nonaccept states in $M$, the new DFA will accept the complement of the language $B$.
-              
+                    Every state in DFA has a transition for every symbol in the alphabet. For every possible word, the DFA will end up in either an accept state or a nonaccept state. If we swap the accept and nonaccept states in $M$, the new DFA will accept the complement of the language $B$.
+
               \item Show by giving an example that if $M$ is an NFA that recognizes language $C$, swapping the accept and non-accept states in $M$ doesn’t necessarily yield a new NFA that recognizes the complement of $C$. Is the class of languages recognized by NFAs closed under complement? Explain your answer.
 
-              \begin{figure}[H]
-                \centering
-                \begin{tikzpicture}
-                    \node[state, initial] (q0) {};
-                    \node[state, accepting, right of=q0] (q1) {};
-                    \draw
-                    (q0) edge[above] node{$0,1$} (q1)
-                    (q0) edge[loop above] node{$0$} (q0);
-                \end{tikzpicture}
-                \caption{example NFA}
-                \begin{tikzpicture}
-                    \node[state, accepting, initial] (q0) {};
-                    \node[state, right of=q0] (q1) {};
-                    \draw
-                    (q0) edge[above] node{$0,1$} (q1)
-                    (q0) edge[loop above] node{$0$} (q0);
-                \end{tikzpicture}
-                \caption{example NFA with changed states acceptance}
-            \end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \begin{tikzpicture}
+                            \node[state, initial] (q0) {};
+                            \node[state, accepting, right of=q0] (q1) {};
+                            \draw
+                            (q0) edge[above] node{$0,1$} (q1)
+                            (q0) edge[loop above] node{$0$} (q0);
+                        \end{tikzpicture}
+                        \caption{example NFA}
+                        \begin{tikzpicture}
+                            \node[state, accepting, initial] (q0) {};
+                            \node[state, right of=q0] (q1) {};
+                            \draw
+                            (q0) edge[above] node{$0,1$} (q1)
+                            (q0) edge[loop above] node{$0$} (q0);
+                        \end{tikzpicture}
+                        \caption{example NFA with changed states acceptance}
+                    \end{figure}
 
-              NFA accepts a string if there is at least one path that leads to an accept state. If we swap the accept and non-accept states in $M$, the new NFA will not necessarily accept the complement of the language $C$. The class of languages recognized by NFAs is not closed under complement.
+                    NFA accepts a string if there is at least one path that leads to an accept state. If we swap the accept and non-accept states in $M$, the new NFA will not necessarily accept the complement of the language $C$. The class of languages recognized by NFAs is not closed under complement.
+          \end{enumerate}
+    \item [1.17]
+          \begin{enumerate}
+              \item Give an NFA recognizing the language $(01 \cup 001 \cup 010)^\ast$
+                    \begin{figure}[H]
+                        \centering
+                        \begin{tikzpicture}
+                            \node[state, initial] (q0) {};
+                            \node[state, above right of=q0] (q1) {};
+                            \node[state, right of=q0] (q2) {};
+                            \node[state, below right of=q0] (q3) {};
+                            \node[state, right of=q1] (q11) {};
+                            \node[state, right of=q11] (q12) {};
+
+                            \node[state, right of=q2] (q21) {};
+                            \node[state, right of=q21] (q22) {};
+                            \node[state, right of=q22] (q23) {};
+                            \node[state, right of=q3] (q31) {};
+                            \node[state, right of=q31] (q32) {};
+                            \node[state, right of=q32] (q33) {};
+
+                            \node[state, accepting, right of=q23] (qend) {};
+                            \draw
+                            (q0) edge[above] node{$\epsilon$} (q1)
+                            (q0) edge[above] node{$\epsilon$} (q2)
+                            (q0) edge[above] node{$\epsilon$} (q3)
+                            (q1) edge[loop above] node{$1$} (q1)
+                            (q2) edge[loop above] node{$0$} (q2)
+
+                            (q12) edge[above] node{$\epsilon$} (qend)
+                            (q23) edge[above] node{$\epsilon$} (qend)
+                            (q33) edge[above] node{$\epsilon$} (qend)
+                            (qend) edge[bend right, above] node{$\epsilon$} (q0);
+                        \end{tikzpicture}
+                        \caption{NFA recognizing the language $(01 \cup 001 \cup 010)^\ast$}
+                    \end{figure}
+              \item Convert this NFA to an equivalent DFA. Give only the portion of the DFA that is reachable from the start state.
           \end{enumerate}
     \item [1.18]
           Give regular expressions generating the languages of Exercise 1.6.
