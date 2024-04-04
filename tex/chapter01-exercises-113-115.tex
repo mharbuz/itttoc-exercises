@@ -96,7 +96,19 @@
                   (q2) edge[bend right, above] node{$\epsilon$} (q0)
                   (q3) edge[bend left, above] node{$\epsilon$} (q0);
               \end{tikzpicture}
-              \caption{NFA $N$}
+              \caption{construction of NFA $N_1$}
+          \end{figure}
+
+          \begin{figure}[H]
+              \centering
+              \begin{tikzpicture}
+                  \node[state, initial] (q0) {};
+                  \node[state, accepting, right of=q0] (q1) {};
+                  \draw
+                  (q0) edge[bend right, above] node{$0$} (q1)
+                  (q1) edge[bend right, above] node{$1$} (q0);
+              \end{tikzpicture}
+              \caption{counter example of NFA $N_1$}
           \end{figure}
     \item [1.17]
           \begin{enumerate}
