@@ -179,20 +179,22 @@
                     \begin{figure}[H]
                         \centering
                         \begin{tikzpicture}
-                            \node[state, initial] (q1) {$\{1\}$};
+                            \node[state] (q1) {$\{1\}$};
                             \node[state, accepting, right of=q1] (q2) {$\{2\}$};
-                            \node[state, below left of=q2] (q3) {$\{3\}$};
-                            \node[state, below of=q3] (q4) {$\emptyset$};
-                            \node[state, accepting, right of=q3] (q5) {$\{1,2\}$};
+
+                            \node[state, accepting, below right of=q2, initial] (q5) {$\{1,2\}$};
+                            \node[state, below left of=q5] (q4) {$\emptyset$};
+
                             \node[state, right of=q5] (q6) {$\{1,3\}$};
+                            \node[state, above of=q6] (q3) {$\{3\}$};
                             \node[state, accepting, right of=q6] (q7) {$\{2,3\}$};
                             \node[state, accepting, right of=q7] (q8) {$\{1,2,3\}$};
                             \draw
-                            (q1) edge[bend right, right] node{$a$} (q3)
+                            (q1) edge[left, above] node{$a$} (q6)
                             (q1) edge[bend right, left] node{$b$} (q4)
                             (q2) edge[right, below left] node{$b$} (q4)
                             (q3) edge[bend left, above right] node{$b$} (q7)
-                            (q3) edge[left] node{$a$} (q2)
+                            (q3) edge[above] node{$a$} (q2)
 
                             (q2) edge[bend right, above] node{$a$} (q1)
                             (q7) edge[bend left, below] node{$a$} (q5)
