@@ -182,31 +182,33 @@
                             \node[state] (q1) {$\{1\}$};
                             \node[state, accepting, right of=q1] (q2) {$\{2\}$};
 
-                            \node[state, accepting, below right of=q2, initial] (q5) {$\{1,2\}$};
-                            \node[state, below left of=q5] (q4) {$\emptyset$};
+                            \node[state, accepting, below right of=q2, initial] (q12) {$\{1,2\}$};
+                            \node[state, below left of=q12] (q0) {$\emptyset$};
 
-                            \node[state, right of=q5] (q6) {$\{1,3\}$};
-                            \node[state, above of=q6] (q3) {$\{3\}$};
-                            \node[state, accepting, right of=q6] (q7) {$\{2,3\}$};
-                            \node[state, accepting, right of=q7] (q8) {$\{1,2,3\}$};
+                            \node[state, right of=q12] (q13) {$\{1,3\}$};
+                            \node[state, above of=q13] (q3) {$\{3\}$};
+                            \node[state, accepting, right of=q13] (q23) {$\{2,3\}$};
+                            \node[state, accepting, right of=q23] (q123) {$\{1,2,3\}$};
                             \draw
-                            (q1) edge[left, above] node{$a$} (q6)
-                            (q1) edge[bend right, left] node{$b$} (q4)
-                            (q2) edge[right, below left] node{$b$} (q4)
-                            (q3) edge[bend left, above right] node{$b$} (q7)
+                            (q1) edge[bend left=40, above] node{$a$} (q123)
+                            (q1) edge[bend right, left] node{$b$} (q0)
+                            (q2) edge[right, below left] node{$b$} (q0)
+                            (q2) edge[bend right, above] node{$a$} (q12)
+                            (q3) edge[bend left, above right] node{$b$} (q23)
                             (q3) edge[above] node{$a$} (q2)
 
-                            (q2) edge[bend right, above] node{$a$} (q1)
-                            (q7) edge[bend left, below] node{$a$} (q5)
-                            (q7) edge[loop above] node{$b$} (q7)
-                            (q8) edge[bend right, above] node{$b$} (q7)
+                            (q12) edge[bend right=60, below] node{$a$} (q123)
+                            (q12) edge[right, below] node{$b$} (q0)
 
-                            (q5) edge[right, below] node{$a$} (q6)
-                            (q5) edge[right, below] node{$b$} (q4)
+                            (q23) edge[bend left, below] node{$a$} (q12)
+                            (q23) edge[loop above] node{$b$} (q23)
+                            (q123) edge[bend right, above] node{$b$} (q23)
 
-                            (q6) edge[right, below] node{$a,b$} (q7)
+                            
 
-                            (q8) edge[loop right] node{$a$} (q8);
+                            (q13) edge[right, below] node{$a,b$} (q23)
+
+                            (q123) edge[loop right] node{$a$} (q123);
                         \end{tikzpicture}
                         \caption{DFA $B^\prime$}
                     \end{figure}
