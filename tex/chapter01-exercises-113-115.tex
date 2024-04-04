@@ -52,6 +52,52 @@
 
                     NFA accepts a string if there is at least one path that leads to an accept state. If we swap the accept and non-accept states in $M$, the new NFA will not necessarily accept the complement of the language $C$. The class of languages recognized by NFAs is not closed under complement.
           \end{enumerate}
+    \item [1.15]
+          Give a counter example to show that the following construction fails to prove Theorem 1.49, the closure of the class of regular languages under the star operation. Let $N_1 = (Q_1,\Sigma,\delta_1,q_1,F_1)$ recognize $A_1$. Construct $N = (Q_1,\Sigma,\delta,q_1,F)$ as follows. $N$ is supposed to recognize $A_1^\ast$.
+          \begin{enumerate}
+              \item The states of $N$ are the states of $N_1$.
+              \item The start state of $N$ is the same as the start state of $N_1$.
+              \item $F =\{q_1\} \cup F_1$.
+
+                    The accept states F are the old accept states plus its start state.
+              \item Define $\delta$ so that for any $q \in Q_1$ and any $a \in \Sigma_\epsilon$,
+                    $$\delta(q,a)=
+                        \begin{cases}
+                            \delta_1(q,a)              & q \notin F_1~ \text{or }a \neq \epsilon \\
+                            \delta_1(q,a) \cup \{q_1\} & q \in F_1~ \text{and }a = \epsilon.
+                        \end{cases}
+                    $$
+          \end{enumerate}
+          (Suggestion: Show this construction graphically, as in Figure 1.50.)
+
+          \begin{figure}[H]
+              \centering
+              \begin{tikzpicture}
+
+                  \node[state, initial] (q0) {};
+                  \node[state, right of=q0, minimum size=0.5cm] (q02) {};
+                  \node[state, above of=q02, minimum size=0.5cm] (q01) {};
+                  \node[state, below of=q02, minimum size=0.5cm] (q03) {};
+                  \node[state, accepting, above right of=q02] (q2) {};
+                  \node[state, accepting, below of=q2] (q3) {};
+              \end{tikzpicture}
+              \caption{NFA $N_1$}
+          \end{figure}
+          \begin{figure}[H]
+              \centering
+              \begin{tikzpicture}
+                  \node[state, accepting, initial] (q0) {};
+                  \node[state, right of=q0, minimum size=0.5cm] (q02) {};
+                  \node[state, above of=q02, minimum size=0.5cm] (q01) {};
+                  \node[state, below of=q02, minimum size=0.5cm] (q03) {};
+                  \node[state, accepting, above right of=q02] (q2) {};
+                  \node[state, accepting, below of=q2] (q3) {};
+                  \draw
+                  (q2) edge[bend right, above] node{$\epsilon$} (q0)
+                  (q3) edge[bend left, above] node{$\epsilon$} (q0);
+              \end{tikzpicture}
+              \caption{NFA $N$}
+          \end{figure}
     \item [1.17]
           \begin{enumerate}
               \item Give an NFA recognizing the language $(01 \cup 001 \cup 010)^\ast$
@@ -77,13 +123,20 @@
                             (q0) edge[above] node{$\epsilon$} (q1)
                             (q0) edge[above] node{$\epsilon$} (q2)
                             (q0) edge[above] node{$\epsilon$} (q3)
-                            (q1) edge[loop above] node{$1$} (q1)
-                            (q2) edge[loop above] node{$0$} (q2)
+                            (q1) edge[above] node{$0$} (q11)
+                            (q11) edge[above] node{$1$} (q12)
+                            (q2) edge[above] node{$0$} (q21)
+                            (q21) edge[above] node{$0$} (q22)
+                            (q22) edge[above] node{$1$} (q23)
+
+                            (q3) edge[above] node{$0$} (q31)
+                            (q31) edge[above] node{$1$} (q32)
+                            (q32) edge[above] node{$0$} (q33)
 
                             (q12) edge[above] node{$\epsilon$} (qend)
                             (q23) edge[above] node{$\epsilon$} (qend)
                             (q33) edge[above] node{$\epsilon$} (qend)
-                            (qend) edge[bend right, above] node{$\epsilon$} (q0);
+                            (qend) edge[bend right=70, above] node{$\epsilon$} (q0);
                         \end{tikzpicture}
                         \caption{NFA recognizing the language $(01 \cup 001 \cup 010)^\ast$}
                     \end{figure}
