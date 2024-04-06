@@ -388,11 +388,11 @@
                     \end{figure}
               \item $\{w|\text{the length of }w\text{ is at most }5\}$
                     \begin{align*}
-                        (0+1)?(0+1)?(0+1)?(0+1)?(0+1)?
+                        (\epsilon \cup 0 \cup 1)(\epsilon \cup 0 \cup 1)(\epsilon \cup 0 \cup 1)(\epsilon \cup 0 \cup 1)(\epsilon \cup 0 \cup 1)
                     \end{align*}
               \item $\{w|w~ \text{is any string except }11\text{ and }111\}$
                     \begin{align*}
-                        (\Sigma)^* - 11 - 111
+                        TODO
                     \end{align*}
               \item $\{w|\text{ every odd position of }w\text{ is a }1\}$
                     \begin{align*}
@@ -400,11 +400,11 @@
                     \end{align*}
               \item $\{w|w~ \text{contains at least two }0\text{'s and at most one }1\}$
                     \begin{align*}
-                        0^*0^*1?0^*
+                        00^\ast0 \cup 100^\ast0 \cup 00^\ast10^\ast0 \cup 000^\ast1
                     \end{align*}
               \item $\{\epsilon,0\}$
                     \begin{align*}
-                        0?
+                        \emptyset^\ast \cup 0
                     \end{align*}
               \item $\{w|w~ \text{contains an even number of }0\text{'s, or contains exactly two }1\text{'s}\}$
                     \begin{align*}
@@ -412,11 +412,12 @@
                     \end{align*}
               \item The empty set
                     \begin{align*}
-                        1^*\emptyset
+                        1\emptyset
                     \end{align*}
               \item All strings except the empty string
                     \begin{align*}
-                        \Sigma\Sigma^+
+                        \Sigma\Sigma^\ast
                     \end{align*}
+                    
           \end{enumerate}
 \end{enumerate}
