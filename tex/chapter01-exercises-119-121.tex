@@ -5,7 +5,106 @@
           \begin{enumerate}
               \item $(0 \cup 1)^\ast000(0 \cup 1)^\ast$
               \item $(((00)^\ast(11)) \cup 01)^\ast$
+                    \begin{figure}[H]
+                        \centering
+                        \begin{tikzpicture}[
+                                styleSmall/.style={minimum size=4mm},
+                                node distance=1.5cm,
+                            ]
+                            \node[state, initial, styleSmall] (q0e) {};
+                            \node[state, styleSmall, right of=q0e] (q0) {};
+                            \node[state, right of=q0, styleSmall] (q01) {};
+                            \node[state, right of=q01, styleSmall] (q02) {};
+                            \node[state, right of=q02, styleSmall] (q1e) {};
+                            \node[state, right of=q1e, styleSmall] (q11) {};
+                            \node[state, accepting, right of=q11, styleSmall] (q12) {};
+                            \draw
+                            (q0e) edge[above] node{$\epsilon$} (q0)
+                            (q0) edge[above] node{$0$} (q01)
+                            (q01) edge[above] node{$0$} (q02)
+                            (q02) edge[bend right=40, above] node{$\epsilon$} (q0)
+                            (q02) edge[above] node{$\epsilon$} (q1e)
+                            (q1e) edge[above] node{$1$} (q11)
+                            (q11) edge[above] node{$1$} (q12);
+                        \end{tikzpicture}
+                        \caption{$((00)^\ast(11))$}
+                    \end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \begin{tikzpicture}[
+                                styleSmall/.style={minimum size=4mm},
+                                node distance=1.5cm,
+                            ]
+                            \node[state, initial, styleSmall] (qse) {};
+                            \node[state, above right of=qse, styleSmall] (q0e) {};
+                            \node[state, styleSmall, right of=q0e] (q0) {};
+                            \node[state, right of=q0, styleSmall] (q01) {};
+                            \node[state, right of=q01, styleSmall] (q02) {};
+                            \node[state, right of=q02, styleSmall] (q1e) {};
+                            \node[state, right of=q1e, styleSmall] (q11) {};
+                            \node[state, accepting, right of=q11, styleSmall] (q12) {};
+                            \node[state, below right of=qse, styleSmall] (qs1) {};
+                            \node[state, right of=qs1, styleSmall] (qs2) {};
+                            \node[state, accepting, right of=qs2, styleSmall] (qs3) {};
+                            \draw
+                            (q0e) edge[above] node{$\epsilon$} (q0)
+                            (q0) edge[above] node{$0$} (q01)
+                            (q01) edge[above] node{$0$} (q02)
+                            (q02) edge[bend right=40, above] node{$\epsilon$} (q0)
+                            (q02) edge[above] node{$\epsilon$} (q1e)
+                            (q1e) edge[above] node{$1$} (q11)
+                            (q11) edge[above] node{$1$} (q12)
+                            (qse) edge[above] node{$\epsilon$} (q0e)
+                            (qse) edge[above] node{$\epsilon$} (qs1)
+                            (qs1) edge[above] node{$0$} (qs2)
+                            (qs2) edge[above] node{$1$} (qs3);
+                        \end{tikzpicture}
+                        \caption{$((00)^\ast(11)) \cup 01$}
+                    \end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \begin{tikzpicture}[
+                                styleSmall/.style={minimum size=4mm},
+                                node distance=1.5cm,
+                            ]
+                            \node[state, initial, accepting, styleSmall] (q3e) {};
+                            \node[state, styleSmall, right of=q3e] (qse) {};
+                            \node[state, above right of=qse, styleSmall] (q0e) {};
+                            \node[state, styleSmall, right of=q0e] (q0) {};
+                            \node[state, right of=q0, styleSmall] (q01) {};
+                            \node[state, right of=q01, styleSmall] (q02) {};
+                            \node[state, right of=q02, styleSmall] (q1e) {};
+                            \node[state, right of=q1e, styleSmall] (q11) {};
+                            \node[state, accepting, right of=q11, styleSmall] (q12) {};
+                            \node[state, below right of=qse, styleSmall] (qs1) {};
+                            \node[state, right of=qs1, styleSmall] (qs2) {};
+                            \node[state, accepting, right of=qs2, styleSmall] (qs3) {};
+                            \draw
+                            (q0e) edge[above] node{$\epsilon$} (q0)
+                            (q0) edge[above] node{$0$} (q01)
+                            (q01) edge[above] node{$0$} (q02)
+                            (q02) edge[bend right=40, above] node{$\epsilon$} (q0)
+                            (q02) edge[above] node{$\epsilon$} (q1e)
+                            (q1e) edge[above] node{$1$} (q11)
+                            (q11) edge[above] node{$1$} (q12)
+                            (qse) edge[above] node{$\epsilon$} (q0e)
+                            (qse) edge[above] node{$\epsilon$} (qs1)
+                            (qs1) edge[above] node{$0$} (qs2)
+                            (qs2) edge[above] node{$1$} (qs3)
+                            (q3e) edge[above] node{$\epsilon$} (qse)
+                            (q12) edge[bend right=40, above] node{$\epsilon$} (q3e)
+                            (qs3) edge[bend left=40, below] node{$\epsilon$} (q3e);
+                        \end{tikzpicture}
+                        \caption{$(((00)^\ast(11)) \cup 01)^\ast$}
+                    \end{figure}
               \item $\emptyset$
+                    \begin{figure}[H]
+                        \centering
+                        \begin{tikzpicture}
+                            \node[state, initial] (q0) {};
+                            \draw;
+                        \end{tikzpicture}
+                    \end{figure}
           \end{enumerate}
 
 \end{enumerate}
