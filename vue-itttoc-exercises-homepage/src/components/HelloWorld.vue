@@ -1,17 +1,16 @@
 <script setup lang="ts">
-defineProps<{
-  msg: string
-}>()
+defineProps<{}>()
 </script>
 
 <template>
   <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>. What's next?
-    </h3>
+    <h1 class="green">Solutions</h1>
+    <h3>to Introduction to the Theory Of Computation by Michael Sipser<br /></h3>
+    <img
+      src="@/assets/cover.jpg"
+      class="cover"
+      alt="cover of Introduction to the Theory Of Computation"
+    />
   </div>
 </template>
 
@@ -25,6 +24,13 @@ h1 {
 
 h3 {
   font-size: 1.2rem;
+}
+
+.cover {
+  display: block;
+  margin: 0 auto;
+  max-width: 70%;
+  height: auto;
 }
 
 .greetings h1,
