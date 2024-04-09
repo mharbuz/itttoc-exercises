@@ -4,6 +4,81 @@
           Use the procedure described in Lemma 1.55 to convert the following regular expressions to nondeterministic finite automata.
           \begin{enumerate}
               \item $(0 \cup 1)^\ast000(0 \cup 1)^\ast$
+                    \begin{figure}[H]
+                        \centering
+                        \begin{tikzpicture}[
+                                styleSmall/.style={minimum size=4mm},
+                                node distance=1.5cm,
+                            ]
+                            \node[state, accepting, initial, styleSmall] (q01asts) {};
+                            \node[state, styleSmall, right of=q01asts] (q01sum) {};
+                            \node[state, above right of=q01sum, styleSmall] (q01sum0) {};
+                            \node[state, accepting, right of=q01sum0, styleSmall] (q01sum00) {};
+                            \node[state, below right of=q01sum, styleSmall] (q01sum1) {};
+                            \node[state, accepting, right of=q01sum1, styleSmall] (q01sum11) {};
+                            \draw
+                            (q01asts) edge[above] node{$\epsilon$} (q01sum)
+                            (q01sum) edge[above] node{$\epsilon$} (q01sum0)
+                            (q01sum) edge[above] node{$\epsilon$} (q01sum1)
+                            (q01sum0) edge[above] node{$0$} (q01sum00)
+                            (q01sum1) edge[above] node{$1$} (q01sum11)
+                            (q01sum00) edge[bend right=80, above] node{$\epsilon$} (q01sum)
+                            (q01sum11) edge[bend left=80, below] node{$\epsilon$} (q01sum);
+                        \end{tikzpicture}
+                        \caption{$(0 \cup 1)^\ast$}
+                    \end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \begin{tikzpicture}[
+                                styleSmall/.style={minimum size=4mm},
+                                node distance=1.5cm,
+                            ]
+                            \node[state, initial, styleSmall] (q01asts) {};
+                            \node[state, styleSmall, right of=q01asts] (q01sum) {};
+                            \node[state, above right of=q01sum, styleSmall] (q01sum0) {};
+                            \node[state, right of=q01sum0, styleSmall] (q01sum00) {};
+                            \node[state, below right of=q01sum, styleSmall] (q01sum1) {};
+                            \node[state, right of=q01sum1, styleSmall] (q01sum11) {};
+
+                            \node[state, below right of=q01sum00, styleSmall] (qzs) {};
+                            \node[state, right of=qzs, styleSmall] (qz0) {};
+                            \node[state, right of=qz0, styleSmall] (qz00) {};
+                            \node[state, right of=qz00, styleSmall] (qz000) {};
+
+                            \node[state, below right of=q01sum11, styleSmall] (q21asts) {};
+                            \node[state, styleSmall, right of=q21asts] (q21sum) {};
+                            \node[state, above right of=q21sum, styleSmall] (q21sum0) {};
+                            \node[state, accepting, right of=q21sum0, styleSmall] (q21sum00) {};
+                            \node[state, below right of=q21sum, styleSmall] (q21sum1) {};
+                            \node[state, accepting, right of=q21sum1, styleSmall] (q21sum11) {};
+                            \draw
+                            (q01asts) edge[above] node{$\epsilon$} (q01sum)
+                            (q01sum) edge[above] node{$\epsilon$} (q01sum0)
+                            (q01sum) edge[above] node{$\epsilon$} (q01sum1)
+                            (q01sum0) edge[above] node{$0$} (q01sum00)
+                            (q01sum1) edge[above] node{$1$} (q01sum11)
+                            (q01sum00) edge[bend right=80, above] node{$\epsilon$} (q01sum)
+                            (q01sum11) edge[bend left=80, below] node{$\epsilon$} (q01sum)
+
+                            (q01sum00) edge[above] node{$\epsilon$} (qzs)
+                            (q01sum11) edge[above] node{$\epsilon$} (qzs)
+
+                            (qzs) edge[above] node{$\epsilon0$} (qz0)
+                            (qz0) edge[above] node{$\epsilon0$} (qz00)
+                            (qz00) edge[above] node{$\epsilon0$} (qz000)
+
+                            (qz000) edge[above, bend right] node{$\epsilon$} (q21asts)
+
+                            (q21asts) edge[above] node{$\epsilon$} (q21sum)
+                            (q21sum) edge[above] node{$\epsilon$} (q21sum0)
+                            (q21sum) edge[above] node{$\epsilon$} (q21sum1)
+                            (q21sum0) edge[above] node{$0$} (q21sum00)
+                            (q21sum1) edge[above] node{$1$} (q21sum11)
+                            (q21sum00) edge[bend right=80, above] node{$\epsilon$} (q21sum)
+                            (q21sum11) edge[bend left=80, below] node{$\epsilon$} (q21sum);
+                        \end{tikzpicture}
+                        \caption{$(0 \cup 1)^\ast000(0 \cup 1)^\ast$}
+                    \end{figure}
               \item $(((00)^\ast(11)) \cup 01)^\ast$
                     \begin{figure}[H]
                         \centering
