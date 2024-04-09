@@ -182,4 +182,104 @@
                     \end{figure}
           \end{enumerate}
 
+    \item [1.20]
+          For each of the following languages, give two strings that are members and two strings that are not members—a total of four strings for each part. Assume the alphabet $\Sigma=\{a,b\}$ in all parts.
+          \begin{enumerate}
+              \item $a^\ast b^\ast $
+                    \begin{table}[H]
+                        \centering
+                        \begin{tabular}{|c|c|}
+                            \hline
+                            Members    & Not Members \\
+                            \hline
+                            $\epsilon$ & $bbba$      \\
+                            $ab$       & $abab$      \\
+                            \hline
+                        \end{tabular}
+                    \end{table}
+              \item $a(ba)^\ast b $
+                    \begin{table}[H]
+                        \centering
+                        \begin{tabular}{|c|c|}
+                            \hline
+                            Members    & Not Members \\
+                            \hline
+                            $ab$       & $b$         \\
+                            $aabababb$ & $aaab$      \\
+                            \hline
+                        \end{tabular}
+                    \end{table}
+              \item $a^\ast \cup b^\ast $
+                    \begin{table}[H]
+                        \centering
+                        \begin{tabular}{|c|c|}
+                            \hline
+                            Members & Not Members \\
+                            \hline
+                            $aaa$   & $ab$        \\
+                            $bbbb$  & $baba$      \\
+                            \hline
+                        \end{tabular}
+                    \end{table}
+              \item $(aaa)^\ast $
+                    \begin{table}[H]
+                        \centering
+                        \begin{tabular}{|c|c|}
+                            \hline
+                            Members    & Not Members \\
+                            \hline
+                            $\epsilon$ & $b$         \\
+                            $aaaaaa$   & $aa$        \\
+                            \hline
+                        \end{tabular}
+                    \end{table}
+              \item $\Sigma^\ast a\Sigma^\ast b\Sigma^\ast a\Sigma^\ast $
+                    \begin{table}[H]
+                        \centering
+                        \begin{tabular}{|c|c|}
+                            \hline
+                            Members   & Not Members \\
+                            \hline
+                            $aba$     & $aaaa$      \\
+                            $ababbbb$ & $bb$        \\
+                            \hline
+                        \end{tabular}
+                    \end{table}
+              \item $aba \cup bab $
+                    \begin{table}[H]
+                        \centering
+                        \begin{tabular}{|c|c|}
+                            \hline
+                            Members & Not Members \\
+                            \hline
+                            $aba$   & $ababab$    \\
+                            $bab$   & $abb$       \\
+                            \hline
+                        \end{tabular}
+                    \end{table}
+              \item $ (\epsilon  \cup a)b $
+                    \begin{table}[H]
+                        \centering
+                        \begin{tabular}{|c|c|}
+                            \hline
+                            Members & Not Members \\
+                            \hline
+                            $b$     & $\epsilon$  \\
+                            $ab$    & $aaba$      \\
+                            \hline
+                        \end{tabular}
+                    \end{table}
+              \item $(a\cup ba \cup bb)\Sigma$
+                    \begin{table}[H]
+                        \centering
+                        \begin{tabular}{|c|c|}
+                            \hline
+                            Members & Not Members \\
+                            \hline
+                            $aa$    & $bbaa$      \\
+                            $bbb$   & $abb$       \\
+                            \hline
+                        \end{tabular}
+                    \end{table}
+          \end{enumerate}
 \end{enumerate}
