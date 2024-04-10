@@ -52,6 +52,96 @@
           Therefore $B^+ \subseteq B$. \\
           Since $B \subseteq B^+$ and $B^+ \subseteq B$ then $B = B^+$. \\
           Therefore $B = B^+$ iff $BB \subseteq B$. \\
-
-
+    \item [1.24]
+          A finite state transducer (FST) is a type of deterministic finite automaton whose output is a string and not just accept or reject. The following are state diagrams of finite state transducers $T_1$ and $T_2$.
+          \begin{enumerate}
+              \item $T_1$ on input $011$
+                    \begin{table}[H]
+                        \centering
+                        \begin{tabular}{|c|c|}
+                            \hline
+                            States        & Output \\
+                            \hline
+                            $q1,q1,q1,q1$ & $000$  \\
+                            \hline
+                        \end{tabular}
+                    \end{table}
+              \item $T_1$ oninput $211$
+                    \begin{table}[H]
+                        \centering
+                        \begin{tabular}{|c|c|}
+                            \hline
+                            States        & Output \\
+                            \hline
+                            $q1,q2,q2,q2$ & $111$  \\
+                            \hline
+                        \end{tabular}
+                    \end{table}
+              \item $T_1$ on input $121$
+                    \begin{table}[H]
+                        \centering
+                        \begin{tabular}{|c|c|}
+                            \hline
+                            States        & Output \\
+                            \hline
+                            $q1,q1,q2,q2$ & $011$  \\
+                            \hline
+                        \end{tabular}
+                    \end{table}
+              \item $T_1$ oninput $0202$
+                    \begin{table}[H]
+                        \centering
+                        \begin{tabular}{|c|c|}
+                            \hline
+                            States           & Output \\
+                            \hline
+                            $q1,q1,q2,q1,q2$ & $0101$ \\
+                            \hline
+                        \end{tabular}
+                    \end{table}
+              \item $T_2$ oninput $b$
+                    \begin{table}[H]
+                        \centering
+                        \begin{tabular}{|c|c|}
+                            \hline
+                            States  & Output \\
+                            \hline
+                            $q1,q3$ & $1$    \\
+                            \hline
+                        \end{tabular}
+                    \end{table}
+              \item $T_2$ on input $bbab$
+                    \begin{table}[H]
+                        \centering
+                        \begin{tabular}{|c|c|}
+                            \hline
+                            States           & Output \\
+                            \hline
+                            $q1,q3,q2,q3,q2$ & $1111$ \\
+                            \hline
+                        \end{tabular}
+                    \end{table}
+              \item $T_2$ oninput $bbbbbb$
+                    \begin{table}[H]
+                        \centering
+                        \begin{tabular}{|c|c|}
+                            \hline
+                            States                 & Output   \\
+                            \hline
+                            $q1,q3,q2,q1,q3,q2,q1$ & $110110$ \\
+                            \hline
+                        \end{tabular}
+                    \end{table}
+              \item $T_2$ oninput $\epsilon$
+                    \begin{table}[H]
+                        \centering
+                        \begin{tabular}{|c|c|}
+                            \hline
+                            States & Output     \\
+                            \hline
+                            $q1$   & $\epsilon$ \\
+                            \hline
+                        \end{tabular}
+                    \end{table}
+          \end{enumerate}
 \end{enumerate}
