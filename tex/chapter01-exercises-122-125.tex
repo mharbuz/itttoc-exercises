@@ -1,0 +1,34 @@
+\begin{enumerate}
+
+    \item [1.22]
+          In certain programming languages, comments appear between delimiters such as \slash\# and \#\slash .Let $C$ be the language of all valid delimited comment strings. A member of $C$ must begin with \slash \# and end with \# \slash but have no intervening \# \slash. For simplicity, assume that the alphabet for $C$ is $\Sigma=\{a,b,\text{/},\text{\#}\}$.
+          \begin{enumerate}
+              \item Give a DFA that recognizes $C$.
+                    \begin{figure}[H]
+                        \centering
+                        \begin{tikzpicture}[
+                            ]
+                            \node[state, initial] (q0) {};
+                            \node[state, right of=q0] (q1) {};
+                            \node[state, right of=q1] (q2) {};
+                            \node[state, right of=q2] (q3) {};
+                            \node[state, accepting, right of=q3] (q4) {};
+                            \node[state, below of=q2] (q5) {};
+                            \draw
+                            (q0) edge[above] node{$\slash$} (q1)
+                            (q1) edge[above] node{$\#$} (q2)
+                            (q2) edge[loop above, above] node{$a,b,\slash$} (q2)
+                            (q2) edge[above] node{$\#$} (q3)
+                            (q3) edge[above] node{$\slash$} (q4)
+                            (q0) edge[bend right, below left] node{$a,b,\#$} (q5)
+                            (q1) edge[bend left, below left] node{$a,b,\slash$} (q5)
+                            (q3) edge[bend left, below left] node{$a,b$} (q2)
+                            (q3) edge[loop above, above] node{$\#$} (q3)
+                            (q5) edge[loop below, below] node{$a,b,\slash,\#$} (q5);
+                        \end{tikzpicture}
+                        \caption{DFA recognizing $C$}
+                    \end{figure}
+              \item Give a regular expression that generates $C$.
+                    $$\slash \#(a \cup b \cup \slash \cup (\#^\ast(a \cup b)))^\ast \# \slash $$
+          \end{enumerate}
+\end{enumerate}
