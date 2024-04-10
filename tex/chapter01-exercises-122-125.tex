@@ -31,4 +31,27 @@
               \item Give a regular expression that generates $C$.
                     $$\slash \#(a \cup b \cup \slash \cup (\#^\ast(a \cup b)))^\ast \# \slash $$
           \end{enumerate}
+    \item [1.23]
+          Let B be any language over the alphabet $\Sigma$. \\
+          Prove that $B = B^+$ iff $BB \subseteq B$.
+
+          Step 1\\
+          Assume $B = B^+$. \\
+          Let $x \in BB$. \\
+          Then $x = uv$ for some $u,v \in B$. \\
+          Since $B = B^+$, $u \in B^+$ and $v \in B^+$. \\
+          Therefore $uv \in B^+$. \\
+          Since $B^+ = B$, $uv \in B$. \\
+          Therefore $BB \subseteq B$. \\
+          \\
+          Step 2\\
+          Assume $BB \subseteq B$. \\
+          Let $x \in B^+$. \\
+          Then $x = uv$ for some $u,v \in B$. \\
+          Since $BB \subseteq B$, $uv \in B$. \\
+          Therefore $B^+ \subseteq B$. \\
+          Since $B \subseteq B^+$ and $B^+ \subseteq B$ then $B = B^+$. \\
+          Therefore $B = B^+$ iff $BB \subseteq B$. \\
+
+
 \end{enumerate}
