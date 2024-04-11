@@ -3,4 +3,18 @@
     \item [1.26]
     \item [1.27]
           Read the informal definition of the finite state transducer given in Exercise 1.24. Give the state diagram of an FST with the following behavior. Its input and output alphabets are $\{0,1\}$. Its output string is identical to the input string on the even positions but inverted on the odd positions. For example, on input $0000111$ it should output $1010010$.
+
+    \item [1.28]
+          Convert the following regular expressions to NFAsusingtheproceduregivenin Theorem 1.54. In all parts, $\Sigma=\{a,b\}$. \begin{enumerate}
+              \item $a(abb)^\ast \cup b$
+              \item $a^+ \cup (ab)^+$
+              \item $(a \cup b^+)a^+b$
+          \end{enumerate}
+    \item [1.29]
+          Use the pumping lemma to show that the following languages are not regular.
+          \begin{enumerate}
+              \item $A_1 =\{0^n 1^n 2^n | ~n \geq 0\}$
+              \item $A_2 =\{www|~w \in \{a,b\}^\ast\}$
+              \item $A_3 = \{ a^{2^n} | ~n \geq 0\}$  (Here, $a^{2^n}$ means a string of $2^n$ $a$’s.)
+          \end{enumerate}
 \end{enumerate}
