@@ -1,7 +1,18 @@
 \begin{enumerate}
 
     \item [1.31]
-          For any string $w = w_1w_2\ldots w_n$, the reverse of $w$, written $w^\mathbb{R}$, is the string $w$ in reverse order, $w_n \ldots w_2w_1$. For any language A, let $A^\mathbb{R} = \{w^\mathbb{R}| w \in A\}$. Show that if $A$ is regular, so is $A^\mathbb{R}$.
+          For any string $w = w_1w_2\ldots w_n$, the reverse of $w$, written $w^R$, is the string $w$ in reverse order, $w_n \ldots w_2w_1$. For any language A, let $A^R = \{w^R ~|~ w \in A\}$. Show that if $A$ is regular, so is $A^R$.
 
-          
+          Let $$D = \{Q, \Sigma, \delta, q_0, F\}$$ be DFA recognizes $A$. We will construct a NFA $$D^R = \{Q^R, \Sigma, \delta^R, q^R_0, \{q_0\}\}$$ that recognizes $A^R$.
+
+          $Q^R = Q \cup \{q^R_0\}$ where $q^R_0$ is new starting state connected with $\epsilon$-edges/transitions to each accepting state of $Q$ from $F$  \\
+          $F^R = \{q_0\}$ (starting state from $D$ is accepting state of $D'$) \\
+          $\delta^R(q, a) = \{p ~|~ \delta(p, a) = q\}$ \\
+          and $\delta^R(q^R_0, \epsilon) = F$.
+
+
+
+
+
+    \item [1.32]
 \end{enumerate}
