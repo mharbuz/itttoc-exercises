@@ -1,6 +1,9 @@
 name: Compile LaTeX and deploy to GitHub Pages
 run-name: Generate PDF with answears and deploy to GitHub Pages
-on: [push]
+on:
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
