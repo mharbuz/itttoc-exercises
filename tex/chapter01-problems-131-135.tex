@@ -2,8 +2,8 @@
 
     \item [1.31]
           For any string $w = w_1w_2\ldots w_n$, the reverse of $w$, written $w^R$, is the string $w$ in reverse order, $w_n \ldots w_2w_1$. For any language A, let $A^R = \{w^R ~|~ w \in A\}$. Show that if $A$ is regular, so is $A^R$.
-\\
-\\
+          \\
+          \\
           Let $$D = \{Q, \Sigma, \delta, q_0, F\}$$ be DFA recognizes $A$. We will construct a NFA $$D^R = \{Q^R, \Sigma, \delta^R, q^R_0, \{q_0\}\}$$ that recognizes $A^R$.
 
           $Q^R = Q \cup \{q^R_0\}$ where $q^R_0$ is new starting state connected with $\epsilon$-edges/transitions to each accepting state of $Q$ from $F$  \\
@@ -17,11 +17,11 @@
 
     \item [1.32]
 
-          Let $\Sigma_3 = \{\begin{bmatrix}0 \\ 0 \\ 0\end{bmatrix} , \begin{bmatrix}0 \\0 \\1 \end{bmatrix}, \begin{bmatrix}0 \\1 \\0\end{bmatrix} ,..., \begin{bmatrix}1 \\1 \\1\end{bmatrix} \}$ . $\Sigma_3$ contains all size 3 columns of $0$'s and $1$'s. A string of symbols in $\Sigma_3$ gives three rows of $0$'s and $1$'s. Consider each row to be a binary number and let \\
+          Let $\Sigma_3 = \Biggl \{\begin{bmatrix}0 \\ 0 \\ 0\end{bmatrix} , \begin{bmatrix}0 \\0 \\1 \end{bmatrix}, \begin{bmatrix}0 \\1 \\0\end{bmatrix} ,..., \begin{bmatrix}1 \\1 \\1\end{bmatrix} \Biggl \}$ . $\Sigma_3$ contains all size 3 columns of $0$'s and $1$'s. A string of symbols in $\Sigma_3$ gives three rows of $0$'s and $1$'s. Consider each row to be a binary number and let \\
           $B =\{w \in \Sigma^\ast_3 ~|~ \text{the bottom row of }~w~\text{is the sum of the top two rows}\}$. \\
           For example, $ \begin{bmatrix}0 \\0 \\1\end{bmatrix}  \begin{bmatrix}1 \\0 \\0\end{bmatrix} \begin{bmatrix} 1\\ 1\\ 0\end{bmatrix} \in B $, but $\begin{bmatrix}0 \\0 \\1\end{bmatrix} \begin{bmatrix}1\\ 0\\1\end{bmatrix} \notin B$. Show that $B$ is regular. (Hint: Working with $B^R$ is easier. You may assume the result claimed in Problem 1.31.)
-\\
-\\
+          \\
+          \\
           Let
 
           $ 0 = \begin{bmatrix}0 \\ 0 \\ 0\end{bmatrix} $
@@ -47,10 +47,43 @@
                   (q0) edge[loop above, above] node{$0,3,5$} (q0)
                   (qbad) edge[loop below, below] node{$0,1,2,3,4,5,6,7$} (q0);
               \end{tikzpicture}
-              \caption{DFA recognizing $\Sigma^{\ast R}_3 = B^R$}
+              \caption{DFA that recognizes $\Sigma^{\ast R}_3 = B^R$}
           \end{figure}
 
-          The DFA above recognizes $B^R$. By Problem 1.31, $B^R$ is regular. Since $B^R$ is regular, $B$ is regular as well.
+          The DFA above recognizes $B^R$. By Problem 1.31, $B$ is regular.
 
+    \item [1.33]
+          Let $\Sigma_2 = \Biggl \{ \begin{bmatrix}0 \\0\end{bmatrix} , \begin{bmatrix}0 \\1\end{bmatrix} , \begin{bmatrix}1\\ 0\end{bmatrix}, \begin{bmatrix}1 \\1\end{bmatrix} \Biggl\}$. Here, $\Sigma_2$ contains all columns of $0$'s and $1$'s of height two. A string of symbols in $\Sigma_2$ gives two rows of $0$'s and $1$'s. Consider each row to be a binary number and let $C =\{w \in \Sigma^\ast_2~|~\text{the bottom row of }w \text{is three times the top row}\}$. For example, $\begin{bmatrix}0 \\0 \end{bmatrix}\begin{bmatrix}0\\ 1 \end{bmatrix}\begin{bmatrix}1 \\1 \end{bmatrix}\begin{bmatrix}0 \\0\end{bmatrix} \in C$, but $\begin{bmatrix}0 \\1\end{bmatrix} \begin{bmatrix}0\\ 1\end{bmatrix} \begin{bmatrix}1\\ 0\end{bmatrix} \notin C$. Show that $C$ is regular. (You may assume the result claimed in Problem 1.31.)
+          \\
+          \\
+          \\
+          Let $0 = \begin{bmatrix}0 \\ 0\end{bmatrix}$, $1 = \begin{bmatrix}0 \\ 1\end{bmatrix}$, $2 = \begin{bmatrix}1 \\ 0\end{bmatrix}$, and $3 = \begin{bmatrix}1 \\ 1\end{bmatrix}$ be shorthand notation for each element of $\Sigma_2$.
+
+          \begin{figure}[H]
+              \centering
+              \begin{tikzpicture}[
+                  ]
+                  \node[state, accepting, initial] (q0) {OK};
+                  \node[state, right of=q0] (qacc1) {$acu_1$};
+                  \node[state, right of=qacc1] (qacc2) {$acu_2$};
+                  \node[state, below of=qacc] (qbad) {$bad$};
+                  \draw
+                  (q0) edge[bend left, above] node{$3$} (qacc1)
+                  (q0) edge[bend right, below] node{$1,2$} (qbad)
+                  (q0) edge[loop above, above] node{$0$} (q0)
+                  (qacc1) edge[bend left, below] node{$1$} (q0)
+                  (qacc1) edge[right] node{$0,3$} (qbad)
+                  (qacc1) edge[loop above, above] node{$2$} (qacc1)
+                  (qacc1) edge[bend left, above] node{$2$} (qacc2)
+                  (qacc2) edge[bend left, below] node{$0$} (qacc1)
+                  (qacc2) edge[bend left, below] node{$1,2$} (qbad)
+                  (qacc2) edge[loop above, above] node{$3$} (qacc2)
+
+                  (qbad) edge[loop below, below] node{$0,1,2,3$} (q0);
+              \end{tikzpicture}
+              \caption{DFA that recognizes $C^R$}
+          \end{figure}
+
+          The DFA above recognizes $C^R$. By Problem 1.31, $C$ is regular.
 
 \end{enumerate}
