@@ -86,4 +86,20 @@
 
           The DFA above recognizes $C^R$. By Problem 1.31, $C$ is regular.
 
+    \item [1.35]
+          Let $\Sigma_2$ be the same as in Problem 1.33. Consider the top and bottom rows to be strings of $0$'s  and $1$'s, and let \\
+          $E =\{w \in \Sigma^\ast_2 |~ \text{the bottom row of w is the reverse of the top row of w}\}$. \\
+          Show that E is not regular.
+          \\
+          \\
+          \\
+          Let $e = \begin{bmatrix}0 \\0\end{bmatrix}^p \begin{bmatrix}1 \\1\end{bmatrix} \begin{bmatrix}0 \\0\end{bmatrix}^p$\\
+          $\left|e\right| = 2p + 1 \ge p$
+
+          All possible divisions of $e$ into $xyz$ such that $\left|xy\right| \le p$ and $\left|y\right| \ge 1$ are of the form $e = xyz = \left(\begin{bmatrix}0 \\0\end{bmatrix}^k\right) \left(\begin{bmatrix}0 \\0\end{bmatrix}^m\right)\left(\begin{bmatrix}0 \\0\end{bmatrix}^{p-k-m} \begin{bmatrix}1 \\1\end{bmatrix} \begin{bmatrix}0 \\0\end{bmatrix}^{p}\right)$ where $0 \le k \le p$.
+
+          $xy^2z = xyyz = \left(\begin{bmatrix}0 \\0\end{bmatrix}^k\right) \left(\begin{bmatrix}0 \\0\end{bmatrix}^m\right)\left(\begin{bmatrix}0 \\0\end{bmatrix}^m\right)\left(\begin{bmatrix}0 \\0\end{bmatrix}^{p-k-m} \begin{bmatrix}1 \\1\end{bmatrix} \begin{bmatrix}0 \\0\end{bmatrix}^{p}\right) =
+              \left(\begin{bmatrix}0 \\0\end{bmatrix}^m\right)\left(\begin{bmatrix}0 \\0\end{bmatrix}^{p} \begin{bmatrix}1 \\1\end{bmatrix} \begin{bmatrix}0 \\0\end{bmatrix}^{p}\right) \notin E$
+
+          Therefore, by pummping lemma, $E$ is not regular.
 \end{enumerate}
