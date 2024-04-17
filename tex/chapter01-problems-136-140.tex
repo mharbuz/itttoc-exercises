@@ -2,4 +2,46 @@
 
     \item [1.36]
           Let $B_n = \{a^k |  ~k~\text{is a multiple of} ~n\}$. Show that for each $n \ge 1$, the language $B_n$ is regular.
+          
+          Lets construct NFA accepting
+          
+          For $n = 2$:
+          \begin{figure}[H]
+              \centering
+              \begin{tikzpicture}[
+                  ]
+                  \node[state, initial, accepting] (q0) {$0$};
+                  \node[state, right of=q0] (q1) {$1$};
+                  \node[state, right of=q1] (q2) {$2$};
+                  \draw
+                  (q0) edge[above] node{$a$} (q1)
+                  (q1) edge[above] node{$a$} (q2)
+                  (q2) edge[bend right, above] node{$\epsilon$} (q0);
+              \end{tikzpicture}
+              \caption{NFA recognicing $B_2$}
+          \end{figure}
+          
+          \begin{figure}[H]
+              \centering
+              \begin{tikzpicture}[
+                  ]
+                  \node[state, initial, accepting] (q0) {$0$};
+                  \node[state, right of=q0] (q1) {$1$};
+                  \node[state, right of=q1] (q2) {$2$};
+                  \node[state, right of=q2] (qe1) {$n-1$};
+                  \node[state, right of=qe1] (qe) {$n$};
+                  \draw
+                  (q0) edge[above] node{$a$} (q1)
+                  (q1) edge[above] node{$a$} (q2)
+                  (q2) edge[above, dashed] node{$a$} (qe1)
+                  (qe1) edge[above] node{$a$} (qe)
+                  (qe) edge[bend right, above] node{$\epsilon$} (q0);
+              \end{tikzpicture}
+              \caption{NFA recognicing $B_n$}
+          \end{figure}
+          
+    \item [1.37]
+    \item [1.38]
+    \item [1.39]
+    \item [1.40]
 \end{enumerate}
