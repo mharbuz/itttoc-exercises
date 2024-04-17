@@ -242,6 +242,33 @@
                         \caption{NFA recognizing the language $(01 \cup 001 \cup 010)^\ast$}
                     \end{figure}
               \item Convert this NFA to an equivalent DFA. Give only the portion of the DFA that is reachable from the start state.
+                    \begin{figure}[H]
+                        \centering
+                        \begin{tikzpicture}
+                            \node[state, initial] (q0) {};
+                            \node[state, right of=q0] (q2) {};
+                            \node[state, above right of=q2] (q11) {};
+                            
+                            \node[state, right of=q2] (q21) {};
+                            \node[state, right of=q21] (q22) {};
+                            \node[state, right of=q11] (q31) {};
+                            
+                            \node[state, accepting, right of=q22] (qend) {};
+                            \draw
+                            (q0) edge[above] node{$0$} (q2)
+                            (q2) edge[above] node{$1$} (q11)
+                            (q2) edge[above] node{$0$} (q21)
+                            (q21) edge[above] node{$1$} (q22)
+                            
+                            (q11) edge[above] node{$0$} (q31)
+                            
+                            (q11) edge[above] node{$\epsilon$} (qend)
+                            (q31) edge[above] node{$\epsilon$} (qend)
+                            (q22) edge[below] node{$\epsilon$} (qend)
+                            (qend) edge[bend right=70, above] node{$\epsilon$} (q0);
+                        \end{tikzpicture}
+                        \caption{DFA recognizing the language $(01 \cup 001 \cup 010)^\ast$}
+                    \end{figure}
           \end{enumerate}
     \item [1.18]
           Give regular expressions generating the languages of Exercise 1.6.
