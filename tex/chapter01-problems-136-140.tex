@@ -102,6 +102,10 @@
     \item [1.38]
 
     An all-NFA $M$ is a 5-tuple $(Q,\Sigma,\delta,q_0,F)$ that accepts $x \in \Sigma^\ast$ if every possible state that $M$ could be in after reading input $x$ is a state from $F$. Note, in contrast, that an ordinary NFA accepts a string if some state among these possible states is an accept state. Prove that all-NFAs recognize the class of regular languages.
+
+    In procedure to change NFA to DFA just change step which marks state as accepting when state of DFA corresponds to states of NFA with at least one is acccepting to accepting only when all states are accepting.
+
+    Now we have DFA avvepting the same language as all-NFA $M$ so language is regular.
     \item [1.39]
     \item [1.40]
 \end{enumerate}
