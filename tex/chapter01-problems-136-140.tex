@@ -2,9 +2,9 @@
 
     \item [1.36]
           Let $B_n = \{a^k |  ~k~\text{is a multiple of} ~n\}$. Show that for each $n \ge 1$, the language $B_n$ is regular.
-          
+
           Lets construct NFA accepting
-          
+
           For $n = 2$:
           \begin{figure}[H]
               \centering
@@ -20,7 +20,7 @@
               \end{tikzpicture}
               \caption{NFA recognicing $B_2$}
           \end{figure}
-          
+
           \begin{figure}[H]
               \centering
               \begin{tikzpicture}[
@@ -39,12 +39,12 @@
               \end{tikzpicture}
               \caption{NFA recognicing $B_n$}
           \end{figure}
-          
+
     \item [1.37]
           Let $C_n = \{x~ |~ x~ \text{is a binary number that is a multiple of} ~n\}$. Show that for each $n \ge 1$, the language $C_n$ is regular.
-          
+
           Lets build $DFA_C$ recognizing $C_n$:
-          
+
           $DFA_C = (Q, \Sigma, \delta, q_0, F)$
           \begin{itemize}
               \item $Q = \{0', 1', 2', \ldots, (n-1)'\}$
@@ -59,11 +59,11 @@
                     where q is the integer part of $q'$.
           \end{itemize}
           We build DFA recognizing $C_n$ so $C_n$ is regular.
-          
+
           Idea
-          
+
           $i\text{-th}$ state represents integers which modulo from dividing by $n$ is $i$, because $n$ is multiple of $n$.
-          
+
           \begin{figure}[H]
               \centering
               \begin{tikzpicture}[
@@ -84,7 +84,7 @@
               \end{tikzpicture}
               \caption{$DFA_C$ for $n = 4$}
           \end{figure}
-          
+
           \begin{table}[H]
               \centering
               \begin{tabular}{|r|r|r|r|}
@@ -98,20 +98,31 @@
                   \hline
               \end{tabular}
           \end{table}
-          
+
     \item [1.38]
-          
+
           An all-NFA $M$ is a 5-tuple $(Q,\Sigma,\delta,q_0,F)$ that accepts $x \in \Sigma^\ast$ if every possible state that $M$ could be in after reading input $x$ is a state from $F$. Note, in contrast, that an ordinary NFA accepts a string if some state among these possible states is an accept state. Prove that all-NFAs recognize the class of regular languages.
-          
+
           In procedure to change NFA to DFA just change step which marks state as accepting when state of DFA corresponds to states of NFA with at least one is acccepting to accepting only when all states are accepting.
-          
+
           Now we have DFA avvepting the same language as all-NFA $M$ so language is regular.
     \item [1.39]
           The construction in Theorem 1.54 shows that every GNFA is equivalent to a GNFA with only two states. We can show that an opposite phenomenon occurs for DFAs. Prove that for every $k > 1$, a language $A_k \subseteq \{0,1\}^\ast$ exists that is recognized by a DFA with $k$ states but not by one with only $k-1$ states.
     \item [1.40]
-          Recall that string $x$ is a \textbf{prefix} of string $y$ if a string $z$ exists where $xz = y$, and that $x$ is a \textbf{proper prefix} of $y$ if in addition $x \neq y$. In each of the following parts, we define an operation on a language $A$. Show that the class of regular languages is closed under that operation. 
+          Recall that string $x$ is a \textbf{prefix} of string $y$ if a string $z$ exists where $xz = y$, and that $x$ is a \textbf{proper prefix} of $y$ if in addition $x \neq y$. In each of the following parts, we define an operation on a language $A$. Show that the class of regular languages is closed under that operation.
           \begin{itemize}
-              \item $\text{NOPREFIX}(A)=\{w \in A~|~\text{no proper prefix of } w~ \text{is a member of}~ A\}$.
+              \item $L = \text{NOPREFIX}(A)=\{w \in A~|~\text{no proper prefix of } w~ \text{is a member of}~ A\}$.
+
+                    Let be DFA $M = (Q, \Sigma, \delta, q_0, F)$ recognizes A (as A is regular language).
+
+                    We need to construct $L$ which contains strings so that DFA $M$ will go to accepting state only at the end of processing string. In other words for all $w = w_1w_2\ldots w_n \in A$, $\delta(q_{i-1}, w_i) = q_{i}$ and $q_i \in F$ only for $i = n$.
+
+                    Let $\overline{L} = \overline{NOPREFIX(A)}$
+
+                    $\overline{L} = \{w \in A~|~\text{there is a proper prefix of } w~ \text{is a member of}~ A\}$.
+
+                    $\overline{L} = \{w \in A~|~\text{there is}~ x \in A~\text{ and }~ z \in \Sigma^\ast  | w = xz\}$.
+
               \item $\text{NOEXTEND}(A)=\{w \in A~|~w~ \text{is not the proper prefix of any string in}~ A\}$.
           \end{itemize}
 \end{enumerate}
