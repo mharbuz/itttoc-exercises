@@ -117,12 +117,21 @@
 
                     We need to construct $L$ which contains strings so that DFA $M$ will go to accepting state only at the end of processing string. In other words for all $w = w_1w_2\ldots w_n \in A$, $\delta(q_{i-1}, w_i) = q_{i}$ and $q_i \in F$ only for $i = n$.
 
-                    Let $\overline{L} = \overline{NOPREFIX(A)}$
+                    DFA $M_{NOPREFIX} = (Q \cup {q_f}, \Sigma, \delta_{NOPREFIX}, q_0, F)$
 
-                    $\overline{L} = \{w \in A~|~\text{there is a proper prefix of } w~ \text{is a member of}~ A\}$.
-
-                    $\overline{L} = \{w \in A~|~\text{there is}~ x \in A~\text{ and }~ z \in \Sigma^\ast  | w = xz\}$.
+                    where $\delta_{NOPREFIX}(q, a) = \delta(q, a)$ for $q \in Q$ and $\delta_{NOPREFIX}(q, a) = q_f$ for $q \in F$.
+                    
 
               \item $\text{NOEXTEND}(A)=\{w \in A~|~w~ \text{is not the proper prefix of any string in}~ A\}$.
+
+                During processing string $w$ DFA $M$ can't go from accepting state to another accepting state by any possible way.
+
+                DFA $M_{NOEXTEND} = (Q, \Sigma, \delta, q_0, F_{NOEXTEND})$
+
+                where $F_{NOEXTEND} = F - F'$
+
+                where $F'$ is set of states which can be reached from accepting state by any possible way.
+
+                To build $F'$ lets go from all accepting states and mark all states which can be reached from them. Then $F'$ is set of all marked states. We can stop after $\overline{Q}$ steps where $\overline{Q}$ is number of states in DFA $M$. Each step we go every $a \in \Sigma$ from every accepting state or state reached from previous step.
           \end{itemize}
 \end{enumerate}
