@@ -1,38 +1,60 @@
 \begin{enumerate}
 
       \item [1.41]
-            
+
             For languages $A$ and $B$,let the \textbf{perfect shuffle} of $A$ and $B$ be the language $\{w~|~ w = a_1b_1\ldots a_kb_k , \text{where} a_1\ldots a_k \in A \text{and} b_1 \ldots b_k \in B, each a_i,b_i \in \Sigma\}$. Show that the class of regular languages is closed under perfect shuffle.
-            
+
             TODO - double check this solution
-            
+
             Let $A$ and $B$ be regular languages. Then there exist DFAs $M_A$ and $M_B$ that accept $A$ and $B$, respectively. We construct a DFA $M$ that accepts the perfect shuffle of $A$ and $B$.
-            
+
             Let $M_A = (Q_A,\Sigma,\delta_A,q_{0A},F_A)$ and $M_B = (Q_B,\Sigma,\delta_B,q_{0B},F_B)$. Let $Q = Q_A \times Q_B$, $q_0 = (q_{0A},q_{0B})$, and $F = F_A \times F_B$. The transition function $\delta$ is defined as follows: for each $q \in Q$ and $a \in \Sigma$, $\delta(q,a) = (\delta_A(q_A,a),\delta_B(q_B,a))$.
-            
+
             We claim that $L(M) = A \circ B$. Let $w = a_1b_1\ldots a_kb_k \in A \circ B$. Then there exists a sequence of states $r_0,r_1,\ldots,r_k$ such that $r_0 = q_0$, $r_k \in F$, and $\delta(r_{i-1},a_i) = r_i$ for $i = 1,\ldots,k$. Let $r_i = (r_{iA},r_{iB})$. Then $r_{iA} \in Q_A$ and $r_{iB} \in Q_B$. Since $r_k \in F$, $r_{kA} \in F_A$ and $r_{kB} \in F_B$. Thus $a_1\ldots a_k \in A$ and $b_1\ldots b_k \in B$. Therefore $w \in A \circ B$.
-            
+
             Conversely, let $w = a_1\ldots a_kb_1\ldots b_k \in A \circ B$. Then $a_1\ldots a_k \in A$ and $b_1\ldots b_k \in B$. Let $r_i = (r_{iA},r_{iB})$ for $i = 0,\ldots,k$. Then $r_0 = q_0$, $r_k \in F$, and $\delta(r_{i-1},a_i) = r_i$ for $i = 1,\ldots,k$. Therefore $w \in L(M)$.
-            
-            
+
+
       \item [1.42]
-            
+
             For languages $A$ and $B$, let the \textbf{shuffle} of $A$ and $B$ be the language $\{w~|~ w = a_1b_1\ldots a_kb_k, where a_1 \ldots a_k \in A \text{and} b_1 \ldots b_k \in B\text{, each }a_i,b_i \in \Sigma^\ast\}$. Show that the class of regular languages is closed under \textbf{shuffle}.
-            
+
       \item [1.43]
-            
+
             Let $A$ be any language. Define $\text{DROP-OUT}(A)$ to be the language containing all strings that can be obtained by removing one symbol from a string in $A$. Thus,
-            
+
             $\text{DROP-OUT}(A)=\{xz ~|~ xyz \in A~ \text{where}~ x,z \in \Sigma^\ast,y \in \Sigma\}$.
-            
+
             Show that the class of regular languages is closed under the $\text{DROP-OUT}$ operation. Give both a proof by picture and a more formal proof by construction as in Theorem 1.47.
-            
+
+
+
+
       \item [1.44]
+      Let $B$ and $C$ be languages over $\Sigma = \{0,1\}$. Define $B \xleftarrow[]{1} C = \{w \in B~| ~\text{for some} y \in C, \text{strings}~ w~ \text{and}~ y~ \text{contain equal numbers of }1\text{s}\}$. Show that the class of regular languages is closed under the $\xleftarrow[]{1}$ operation.   
+
       \item [1.45]
+
+      Let $A/B = \{w~|~wx \in A \text{for some}~ x \in B\}$.Show that if $A$ is regular and $B$ is any language, then $A/B$ is regular.
       \item [1.46]
+      
+      Prove that the following languages are not regular. You may use the pumping lemma and the closure of the class of regular languages under union, intersection, and complement. 
+
+    \begin{itemize}
+
+      \item $\{0^n1^m0^n ~|~ m,n \ge 0\}$ 
+
+      \item $\{0^m1^n~ |~ m \ne n\} $
+
+      \item $\{w~|~w \in {0,1}^\ast \text{is not a palindrome}\}$
+
+      \item $\{wtw~|~w,t \in{0,1}^+\}$
+
+    \end{itemize}
       \item [1.47]
-            Let $\Sigma = \{1,\#\}$ and let $Y =\{w~|~w = x_1\#x_2\#\ldots \#x_k~ \text{for}~ k \ge 0, \text{each} x_i \in 1^\ast, and x_i \ne x_j \text{for} i \ne j\}$. Prove that $Y$ is not regular
+      
+      Let $\Sigma = \{1,\#\}$ and let $Y =\{w~|~w = x_1\#x_2\#\ldots \#x_k~ \text{for}~ k \ge 0, \text{each} x_i \in 1^\ast, and x_i \ne x_j \text{for} i \ne j\}$. Prove that $Y$ is not regular
       \item [1.48]
       \item [1.49]
-            
+
 \end{enumerate}
