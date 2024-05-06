@@ -1,14 +1,50 @@
 \begin{enumerate}
 
       \item [1.50]
+            
+            Read the informal definition of the finite state transducer given in Exercise 1.24. Prove that no FST can output $w^R$ for every input $w$ if the input and output alphabets are $\{0,1\}$.
+            
       \item [1.51]
+            
+            Let $x$ and $y$ be strings and let $L$ be any language. We say that $x$ and $y$ are \textbf{distinguishable by $L$} if some string $z$ exists whereby exactly one of the strings $xz$ and $yz$ is a member of $L$; otherwise, for every string $z$, we have $xz \in L$ whenever $yz \in L$ and we say that $x$ and $y$ are \textbf{indistinguishable by $L$}. 
+            
+            If $x$ and $y$ are indistinguishable by $L$, we write $x \equiv_{L} y$ . Show that $\equiv_{L}$ is an equivalence relation.
+            
       \item [1.52]
+            
+            \textbf{Myhill–Nerode theorem}. 
+            
+            Refer to Problem 1.51. Let $L$ be a language and let $X$ be a set of strings. Say that $X$ is \textbf{pairwise distinguishable by L} if every two distinct strings in $X$ are distinguishable by L. Define the index of $L$ to be the maximum number of elements in any set that is pairwise distinguishable by $L$. The index of $L$ may befinite or infinite. 
+            
+            \begin{enumerate}
+                  \item Show that if $L$ is recognized by a $DFA$ with $k$ states, $L$ has index at most $k$.
+                  \item Show that if the index of $L$ is a finite number $k$, it is recognized by a $DFA$ with $k$ states.
+                  \item Conclude that $L$ is regular iff it has finite index. Moreover, its index is the size of the smallest $DFA$ recognizing it.
+            \end{enumerate}
+            
       \item [1.53]
+            
+            Let $\Sigma = \{0,1,+,=\}$ and 
+            
+            $$ADD = \{x=y+z~|~x,y,z~\text{are binary integers, and}~ x~ \text{is the sum of}~ y ~\text{and}~ z\}.$$
+            
+            Show that $ADD$ is not regular.
+            
       \item [1.54]
+            
+            Consider the language $F = \{a^i b^j c^k ~|~ i,j,k \geq 0~ \text{and if}~ i=1~ \text{then}~~ j = k\}$. 
+            \begin{enumerate}
+                  \item Show that $F$ is not regular.
+                  \item Show that $F$ acts like a regular language in the pumping lemma. In other words, give a pumping length $p$ and demonstrate that $F$ satisfies the three conditions of the pumping lemma for this value of $p$.
+                  \item Explain why parts (a) and (b) do not contradict the pumping lemma.
+                        
+            \end{enumerate}
       \item [1.55]
+            
+            
       \item [1.56]
       \item [1.57]
       \item [1.58]
       \item [1.59]
-
+            
 \end{enumerate}
