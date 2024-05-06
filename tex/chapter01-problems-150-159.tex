@@ -39,12 +39,48 @@
                   \item Explain why parts (a) and (b) do not contradict the pumping lemma.
                         
             \end{enumerate}
+            
       \item [1.55]
             
+            The pumping lemma says that every regular language has a pumping length $p$, such that every string in the language can be pumped if it has length $p$ or more. If $p$ is a pumping length for language $A$, so is any length $p' \ge p$.The minimum pumping length for $A$ is the smallest $p$ that is a pumping length for $A$. For example, if $A=01^\ast$,the minimum pumping length is 2. The reason is that the string $s = 0$ is in $A$ and has length $1$ yet $s$ cannot be pumped; but any string in $A$ of length $2$ or more contains a $1$ and hence can be pumped by dividing it so that $x = 0, y = 1$, and $z$ is the rest. For each of the following languages, give the minimum pumping length and justify your answer.
+            
+            \begin{enumerate}
+                  \item $0001^\ast$
+                  \item $0^\ast 1^\ast$
+                  \item $001 \cup 0^\ast 1^\ast$
+                  \item $0^\ast 1^+ 0^+ 1^\ast \cup 10^\ast1$
+                  \item $(01)^\ast$
+                  \item $\epsilon$
+                  \item $1^\ast01^\ast01^\ast$
+                  \item $10(11^\ast0)^\ast0$
+                  \item $1011$
+                  \item $\Sigma^\ast$
+            \end{enumerate}
             
       \item [1.56]
+            
+            If $A$ is a set of natural numbers and $k$ is a natural number greater than $1$, let $B_k(A)=\{w~|~w~ \text{is the representation in base}~k~\text{of some number in} A\}$. Here, we do not allow leading $0$s in the representation of a number. For example, $B_2({3,5})=\{11,101\}$ and $B_3({3,5})=\{10,12\}$. Give an example of a set $A$ for which $B_2(A)$ is regular but $B_3(A)$ is not regular. 
+            
+            Prove that your example works.
+            
       \item [1.57]
+            
+            If $A$ is any language, let $A_{\frac{1}{2}-}$ be the set of all first halves of strings in A so that $A_{\frac{1}{2}-} = \{x~|~ \text{for some}~ y, |x| = |y| ~\text{and}~ xy \in A\}$. 
+            
+            Show that if $A$ is regular, then so is $A_{\frac{1}{2}-}$.
+            
       \item [1.58]
+
+      If $A$ is any language, let $A_{\frac{1}{3}-\frac{1}{3}}$ be the set of all strings in A with their middle thirds removed so that $A_{\frac{1}{3}-\frac{1}{3}} = \{xz~|~ \text{for some}~ y, |x| = |y| = |z|~ \text{and}~ xyz \in A\}$. Show that if $A$ is regular, then $A_{\frac{1}{3}-\frac{1}{3}}$ is not necessarily regular.
+
       \item [1.59]
+
+      Let $M = (Q,\Sigma, \delta, q_0, F)$ be a DFA and let $h$ be a state of $M$ called its “home”. A synchronizing sequence for $M$ and $h$ is a string $s \in \Sigma^\ast$ where $\delta(q,s)=h$ for every $q \in Q$. 
+      
+      (Here we have extended $\delta$ to strings, so that $\delta(q,s)$ equals the state where $M$ ends up when $M$ starts at state $q$ and reads input $s$.) 
+      
+      Say that $M$ is synchronizable if it has a synchronizing sequence for some state $h$. Prove that if $M$ is a $k$-state synchronizable DFA, then it has a synchronizing sequence of length at most $k^3$. 
+      
+      Can you improve upon this bound?
             
 \end{enumerate}
