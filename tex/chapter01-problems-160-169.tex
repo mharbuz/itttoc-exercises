@@ -1,19 +1,76 @@
 \begin{enumerate}
 
       \item [1.60]
-            
-            
+
+
             Let $\Sigma =\{a,b\}$. For each $k \ge 1$, let $C_k$ be the language consisting of all strings that contain an a exactly $k$ places from the right-hand end. Thus $C_k = \Sigma^\ast a \Sigma^{k-1}$. Describe an NFA with $k+1$ states that recognizes $C_k$ in terms of both a state diagram and a formal description.
-            
+
       \item [1.61]
+
+            Consider the languages $C_k$ defined in Problem 1.60. Prove that for each $k$, no DFA can recognize $C_k$ with fewer than $2k$ states.
+
       \item [1.62]
+
+            Let $\Sigma =\{a,b\}$. For each $k \ge 1$, let $D_k$ be the language consisting of all strings that have at least one $a$ among the last $k$ symbols. Thus $D_k = \Sigma^\ast a(\Sigma \cup \epsilon)^{k-1}$. Describe a DFA with at most $k+1$ states that recognizes $D_k$ in terms of both a state diagram and a formal description.
+
       \item [1.63]
+
+            \begin{enumerate}
+                  \item Let $A$ be an infinite regular language. Prove that $A$ can be split into two infinite disjoint regular subsets.
+                  \item Let $B$ and $D$ be two languages. Write $B \Subset D$ if $B \subseteq D$ and $D$ contains infinitely many strings that are not in $B$. Show that if $B$ and $D$ are two regular languages where $B \Subset D$, then we can find a regular language $C$ where $B \Subset C \Subset D$.
+            \end{enumerate}
+
       \item [1.64]
+
+            Let $N$ be an NFA with $k$ states that recognizes some language $A$.
+            \begin{enumerate}
+                  \item Show that if $A$ is non empty, $A$ contains some string of length at most $k$.
+                  \item Show, by giving an example, that part (a) is not necessarily true if you replace both $A$’s by $\overline{A}$.
+                  \item Show that if $\overline{A}$ is non empty, $\overline{A}$ contains some string of length at most $2k$.
+                  \item Show that the bound given in part (c) is nearly tight; that is, for each $k$, demonstrate an NFA recognizing a language $\overline{A_k}$ where $\overline{A_k}$ is non empty and where $\overline{A_k}$’s shortest member strings are of length exponential in $k$. Come as close to the bound in (c) as you can.
+            \end{enumerate}
+
       \item [1.65]
+
+            Prove that for each $n > 0$, a language $B_n$ exists where
+            \begin{enumerate}
+                  \item $B_n$ is recognizable by an NFA that has $n$ states, and
+                  \item if $B_n = A_1 \cup \ldots \cup A_k$, for regular languages $A_i$, then at least one of the $A_i$ requires a DFA with exponentially many states.
+            \end{enumerate}
+
       \item [1.66]
+
+            A \textbf{homomorphism} is a function $f: \Sigma \longrightarrow \Gamma^\ast$ from one alphabet to strings over another alphabet. We can extend $f$ to operate on strings by defining $f(w)= f(w_1)f(w_2) \ldots f(w_n)$, where $w = w_1 w_2 \ldots w_n$ and each $w_i \in \Sigma$. We further extend $f$ to operate on languages by defining $f(A)=\{f(w)|~ w \in A\}$, for any language $A$.
+
+            \begin{enumerate}
+                  \item Show, by giving a formal construction, that the class of regular languages is closed under homomorphism. In other words, given a DFA $M$ that recognizes $B$ and a homomorphism $f$, construct a finite automaton $M'$ that recognizes $f(B)$. Consider the machine $M'$ that you constructed. Is it a DFA in every case?
+                  \item Show, by giving an example, that the class of non-regular languages is not closed under homomorphism.
+            \end{enumerate}
+
       \item [1.67]
+
+            Let the rotational closure of language $A$ be $RC(A)=\{yx|~ xy \in A\}$.
+            \begin{enumerate}
+                  \item Show that for any language $A$, we have $RC(A)=RC(RC(A))$.
+                  \item Show that the class of regular languages is closed under rotational closure.
+            \end{enumerate}
+
       \item [1.68]
+
+            In the traditional method for cutting a deck of playing cards, the deck is arbitrarily split two parts, which are exchanged before reassembling the deck. In a more complex cut, called Scarne’s cut, the deck is broken into three parts and the middle part in placed first in the reassembly. We’ll take Scarne’s cut as the inspiration for an operation on languages.
+            For a language $A$, let $CUT(A)={yxz|~xyz \in A}$.
+            \begin{enumerate}
+                  \item Exhibit a language $B$ for which $CUT(B)= CUT(CUT(B))$.
+                  \item Show that the class of regular languages is closed under $CUT$.
+            \end{enumerate}
+
+
       \item [1.69]
-            
-            
+
+            Let $Sigma=\{0,1\}$. Let $WW_k = \{ww|~ w \in \Sigma^\ast~ \text{and}~ w~ \text{is of length}~ k\}$.
+            \begin{enumerate}
+                  \item Showthat foreach $k$, no DFA can recognize $WW_k$ with fewer than $2^k$ states.
+                  \item Describe a much smaller NFA for $\overline{WW_k}$, the complement of $WW_k$.
+            \end{enumerate}
+
 \end{enumerate}
