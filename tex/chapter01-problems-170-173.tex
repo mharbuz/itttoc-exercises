@@ -1,10 +1,35 @@
 \begin{enumerate}
 
       \item [1.70]
+
+            We define the \textbf{avoids} operation for languages $A$ and $B$ to be
+
+            $A ~avoids~ B = \{w|~w \in A ~\text{and} ~w~ \text{doesn’t contain any string in}~ B~ \text{as a substring}\}$.
+
+            Prove that the class of regular languages is closed under the avoids operation.
+
       \item [1.71]
+
+            Let $\Sigma =\{0,1\}$.
+
+            \begin{enumerate}
+                  \item Let $A =\{0^k u 0^k|~k \ge 1 \text{and} u \in \Sigma^\ast\}$. Show that $A$ is regular.
+                  \item Let $B =\{0^k 1u0^k|~k \ge 1 \text{and} u \in \Sigma^\ast\}$. Show that $B$ is not regular.
+            \end{enumerate}
+
       \item [1.72]
+
+            Let $M_1$ and $M_2$ be DFAs that have $k_1$ and $k_2$ states, respectively, and then let
+            $U = L(M_1) \cup L(M_2)$.
+            \begin{enumerate}
+                  \item Show that if $U \neq \emptyset$, then $U$ contains some string $s$, where $|s| < max(k_1,k_2)$.
+                  \item Show that if $U=\Sigma^\ast$, then $U$ excludes some string $s$, where $|s| < k_1 k_2$.
+            \end{enumerate}
+
       \item [1.73]
-      
-            
-            
+
+            Let $\Sigma =\{0,1,\#\}$. Let $C = \{x\#x^\mathcal{R}\#x|~x \in \{0,1\}^\ast\}$. Show that $C$ is a CFL.
+
+
+
 \end{enumerate}
