@@ -13,8 +13,16 @@
             Let $\Sigma =\{0,1\}$.
 
             \begin{enumerate}
-                  \item Let $A =\{0^k u 0^k|~k \ge 1 \text{and} u \in \Sigma^\ast\}$. Show that $A$ is regular.
-                  \item Let $B =\{0^k 1u0^k|~k \ge 1 \text{and} u \in \Sigma^\ast\}$. Show that $B$ is not regular.
+                  \item Let $A =\{0^k u 0^k|~k \ge 1 ~\text{and}~ u \in \Sigma^\ast\}$. Show that $A$ is regular.
+                  \item Let $B =\{0^k 1u0^k|~k \ge 1 ~\text{and}~ u \in \Sigma^\ast\}$. Show that $B$ is not regular.
+            \end{enumerate}
+
+            \begin{enumerate}
+                  \item construct NFA accepting $A$:
+
+                        from starting state we can go $k$ times to state after accepted $k$ zeros (otherwise go to unaccepting state from which we cannot escape). Then we can read any symbol from alphabet staying in that state, or, if it is zero we can go to $k$ states accepting $k$ zeros.
+
+                  \item above construction couldn't work beacouse we need to remember first $1$ through don't know how much symbols from $u$.
             \end{enumerate}
 
       \item [1.72]
