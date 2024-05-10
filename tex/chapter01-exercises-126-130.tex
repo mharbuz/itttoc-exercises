@@ -17,4 +17,14 @@
               \item $A_2 =\{www|~w \in \{a,b\}^\ast\}$
               \item $A_3 = \{ a^{2^n} | ~n \geq 0\}$  (Here, $a^{2^n}$ means a string of $2^n$ $a$’s.)
           \end{enumerate}
+
+          \begin{enumerate}
+              \item Let $p$ be the pumping length, and consider the string $0^p 1^p 2^p$. We can pump one symbol at a time ($0$, $1$ or $2$) but it changes the number of symbols of that type. So, the string is not in the language. Or we can pump two different symbols at a time (zeros and ones or ones and twos) but the order of symbols will change.
+
+                    Therefore, $A_1$ is not regular.
+
+              \item Let $w$ be any string of length $p$ with form $a^{p-1}ba^{p-1}ba^{p-1}b$. We can pump part of string with only one $b$, but it will change the number of $b$'s in the string but number of $b$'s won't be divided by 3. Therefore, $A_2$ is not regular.
+
+              \item Choose s to be the string $a^{2^p}$. Because $s$ is a member of $A_3$ and $s$ is longer than $p$, can be split into three pieces, $s = xyz$. $|xy|\geq p$. Furthermore, $p < 2^p$ and so $|y| < 2^p$. Therefore, $|xyyz| = |xyz|+|y| < 2^p+2^p =2^{p+1}$. $|y| > 0$ so $2^p < |xyyz| < 2^{p+1}$. The length of $xyyz$ cannot be a power of $2$. Hence $xyyz$ is not a member of $A_3$, a contradiction.Therefore, $A_3$ is not regular.
+          \end{enumerate}
 \end{enumerate}
