@@ -108,6 +108,13 @@
           Now we have DFA accepting the same language as all-NFA $M$ so language is regular.
     \item [1.39]
           The construction in Theorem 1.54 shows that every GNFA is equivalent to a GNFA with only two states. We can show that an opposite phenomenon occurs for DFAs. Prove that for every $k > 1$, a language $A_k \subseteq \{0,1\}^\ast$ exists that is recognized by a DFA with $k$ states but not by one with only $k-1$ states.
+
+          TODO: check solution
+
+          Let $A_k = \{0^\ast10^\ast \ldots 0^\ast10^\ast ~|~ \text{where it is exactly}~k-1~\text{ones}\}$.
+
+          We cannot build DFA with $k-1$ states recognizing $A_k$ because we need to remember how many ones we have seen so far. We can't do this with $k-1$ states because we can't remember how many ones we have seen so far. (not sure if this is enough to prove it)
+
     \item [1.40]
           Recall that string $x$ is a \textbf{prefix} of string $y$ if a string $z$ exists where $xz = y$, and that $x$ is a \textbf{proper prefix} of $y$ if in addition $x \neq y$. In each of the following parts, we define an operation on a language $A$. Show that the class of regular languages is closed under that operation.
           \begin{itemize}
@@ -120,18 +127,18 @@
                     DFA $M_{NOPREFIX} = (Q \cup {q_f}, \Sigma, \delta_{NOPREFIX}, q_0, F)$
 
                     where $\delta_{NOPREFIX}(q, a) = \delta(q, a)$ for $q \in Q$ and $\delta_{NOPREFIX}(q, a) = q_f$ for $q \in F$.
-                    
+
 
               \item $\text{NOEXTEND}(A)=\{w \in A~|~w~ \text{is not the proper prefix of any string in}~ A\}$.
 
-                During processing string $w$ DFA $M$ can't go from accepting state to another accepting state by any possible way.
+                    During processing string $w$ DFA $M$ can't go from accepting state to another accepting state by any possible way.
 
-                DFA $M_{NOEXTEND} = (Q, \Sigma, \delta, q_0, F_{NOEXTEND})$
+                    DFA $M_{NOEXTEND} = (Q, \Sigma, \delta, q_0, F_{NOEXTEND})$
 
-                where $F_{NOEXTEND} = F - F'$
+                    where $F_{NOEXTEND} = F - F'$
 
-                where $F'$ is set of states which can be reached from accepting state by any possible way.
+                    where $F'$ is set of states which can be reached from accepting state by any possible way.
 
-                To build $F'$ lets go from all accepting states and mark all states which can be reached from them. Then $F'$ is set of all marked states. We can stop after $\overline{Q}$ steps where $\overline{Q}$ is number of states in DFA $M$. Each step we go every $a \in \Sigma$ from every accepting state or state reached from previous step.
+                    To build $F'$ lets go from all accepting states and mark all states which can be reached from them. Then $F'$ is set of all marked states. We can stop after $\overline{Q}$ steps where $\overline{Q}$ is number of states in DFA $M$. Each step we go every $a \in \Sigma$ from every accepting state or state reached from previous step.
           \end{itemize}
 \end{enumerate}
