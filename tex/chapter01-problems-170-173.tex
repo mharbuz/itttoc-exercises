@@ -1,43 +1,53 @@
 \begin{enumerate}
 
       \item [1.70]
-
+            
             We define the \textbf{avoids} operation for languages $A$ and $B$ to be
-
+            
             $A ~avoids~ B = \{w|~w \in A ~\text{and} ~w~ \text{doesn’t contain any string in}~ B~ \text{as a substring}\}$.
-
+            
             Prove that the class of regular languages is closed under the avoids operation.
-
+            
       \item [1.71]
-
+            
             Let $\Sigma =\{0,1\}$.
-
+            
             \begin{enumerate}
                   \item Let $A =\{0^k u 0^k|~k \ge 1 ~\text{and}~ u \in \Sigma^\ast\}$. Show that $A$ is regular.
                   \item Let $B =\{0^k 1u0^k|~k \ge 1 ~\text{and}~ u \in \Sigma^\ast\}$. Show that $B$ is not regular.
             \end{enumerate}
-
+            
             \begin{enumerate}
                   \item construct NFA accepting $A$:
-
+                        
                         from starting state we can go $k$ times to state after accepted $k$ zeros (otherwise go to unaccepting state from which we cannot escape). Then we can read any symbol from alphabet staying in that state, or, if it is zero we can go to $k$ states accepting $k$ zeros.
-
+                        
                   \item above construction couldn't work beacouse we need to remember first $1$ through don't know how much symbols from $u$.
             \end{enumerate}
-
+            
       \item [1.72]
-
+            
             Let $M_1$ and $M_2$ be DFAs that have $k_1$ and $k_2$ states, respectively, and then let
             $U = L(M_1) \cup L(M_2)$.
             \begin{enumerate}
                   \item Show that if $U \neq \emptyset$, then $U$ contains some string $s$, where $|s| < max(k_1,k_2)$.
                   \item Show that if $U=\Sigma^\ast$, then $U$ excludes some string $s$, where $|s| < k_1 k_2$.
             \end{enumerate}
-
+            
+            \begin{enumerate}
+                  \item Let $M_1$ be a DFA defined as follows: $M_1 = (Q, \Sigma, \delta, q_s, F)$ and string $s \in L(M_1)$.
+                        
+                        There is a path $(q_s, q_1, q_2, \ldots, q_{|s|})$ from $q_s$ to $q_f$ in $M_1$ of length $|s|$ where $q_{|s|} \in F$. It represents states in DFA during accepting $s$. It is of length $k_1+1$.
+                        
+                        If $|s| < k_1$ the proof is done. 
+                        
+                        If $|s| \ge k_1$ then there are two states $q_i$ and $q_j$ such that $i < j$ and $q_i = q_j$. It means that there is a loop in DFA and we can skip it. So we can find shorter path from $q_s$ to $q_f$ and so we can choose $s'$ such that $|s'| < k_1$.
+            \end{enumerate}
+            
       \item [1.73]
-
+            
             Let $\Sigma =\{0,1,\#\}$. Let $C = \{x\#x^\mathcal{R}\#x|~x \in \{0,1\}^\ast\}$. Show that $C$ is a CFL.
-
-
-
+            
+            
+            
 \end{enumerate}
