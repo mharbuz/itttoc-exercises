@@ -8,7 +8,7 @@ for
 
 ---
 
-Have other solutions or think mine are wrong? Share your thoughts ([open an issue](https://github.com/mharbuz/itttof-exercices/issues/new))!
+Have other solutions or think mine are wrong? Share your thoughts ([open an issue](https://github.com/mharbuz/itttoc-exercices/issues/new))!
 
 ---
 
