@@ -4,6 +4,7 @@ for
 **[Introduction to the Theory Of Computation](https://www.amazon.com/Introduction-Theory-Computation-Michael-Sipser/dp/113318779X)**
 
 <img src="pub/assets/img/cover.jpg" alt="cover" width="220"/>
+<a href="https://mharbuz.github.io/itttoc-exercises/" target="_blank"><img src="pub/assets/img/homepage_screen.jpg" alt="homepage" width="250"/></a>
 
 ---
 
