@@ -5,8 +5,19 @@
 \usepackage{amsmath}
 \usepackage{tikz} 
 \usepackage{import}
+\usepackage{float}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\usetikzlibrary{automata, positioning, arrows}
 \title{Chapter 0}
 \author{Maciej Harbuz}
+
+\tikzset{
+    -, % makes the edges undirected
+    every state/.style={thick, fill=gray!15}, % sets the properties for each ’state’ node
+    node distance=2.5cm, % specifies the minimum distance between two nodes. Change if necessary.
+    initial text=$ $, % sets the text that appears on the start arrow
+    >=stealth, % makes the arrow heads bold
+}
 
 \begin{document}
 
