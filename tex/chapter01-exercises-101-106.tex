@@ -125,12 +125,47 @@
           Each of the following languages is the intersection of two simpler languages. In each part, construct DFAs for the simpler languages,then combine them using the construction discussed in footnote 3 (page 46) to give the state diagram of a DFA for the language given. In all parts, $\Sigma=\{a,b\}$.
           \begin{enumerate}
               \item $\{w|w~\text{has at least three }a\text{’s and at least two }b\text{’s}\}$
+
+              $DFA_1$ for at least three $a$'s:
+
+              $DFA_2$ for at least two $b$'s:
+
               \item $\{w|w~\text{has exactly two }a\text{’s and at least two }b\text{’s}\}$
-              \item $\{w|w~\text{hasan evennumber of }a\text{’s and one or two }b\text{’s}\}$
-              \item $\{w|w~\text{hasan evennumber of }a\text{’s and each }a\text{ is followed by at least one }b\}$
+
+                $DFA_1$ for exactly two $a$'s:
+
+                $DFA_2$ for at least two $b$'s:
+
+              \item $\{w|w~\text{has an even number of }a\text{’s and one or two }b\text{’s}\}$
+
+                $DFA_1$ for an even number of $a$'s:
+
+                $DFA_2$ for one or two $b$'s:
+
+              \item $\{w|w~\text{has an even number of }a\text{’s and each }a\text{ is followed by at least one }b\}$
+
+                $DFA_1$ for an even number of $a$'s:
+
+                $DFA_2$ for each $a$ is followed by at least one $b$:
+
               \item $\{w|w~\text{starts with an }a\text{ and has at most one }b\}$
+
+                $DFA_1$ for starts with an $a$:
+
+                $DFA_2$ for has at most one $b$:
+
               \item $\{w|w~\text{has an odd number of }a\text{’s and ends with a }b\}$
+
+                $DFA_1$ for an odd number of $a$'s:
+
+                $DFA_2$ for ends with a $b$:
+
               \item $\{w|w~\text{has even length and an odd number of }a\text{’s}\}$
+                    
+                    $DFA_1$ for even length:
+    
+                    $DFA_2$ for an odd number of $a$'s:
+                    
           \end{enumerate}
           
     \item[1.5]
