@@ -147,5 +147,14 @@
           
     \item [1.25]
           
-          Read the informal definition of the finite state transducer given in Exercise 1.24. Give a formal definition of this model, following the pattern in Definition 1.5. Assume that an FST has an input alphabet $\Sigma$ and an output alphabet $\Gamma$ but not a set of accept states. Include a formal definition of the computation of an FST. (Hint: An FST is a 5-tuple. Its transition function is of the form $\sigma: Q \times \Sigma \longrightarrow Q \times \Gamma$.)
+          Read the informal definition of the finite state transducer given in Exercise 1.24. Give a formal definition of this model, following the pattern in Definition 1.5. Assume that an FST has an input alphabet $\Sigma$ and an output alphabet $\Gamma$ but not a set of accept states. Include a formal definition of the computation of an FST. (Hint: An FST is a 5-tuple. Its transition function is of the form $\delta: Q \times \Sigma \longrightarrow Q \times \Gamma$.)
+
+          A finite state transducer is a 5-tuple $(Q, \Sigma, \delta, q_0,F )$, where 
+          \begin{enumerate}
+            \item $Q$ is a finite set called the states, 
+            \item $\Sigma$ is a finite set called the alphabet, 
+            \item $\delta: Q \times \Sigma \longrightarrow Q \times \Gamma$ is the transition and print function,
+            \item $q_0 \in Q$ is the start state, and 
+            \item $F \subseteq Q$ is the set of accept states.
+          \end{enumerate}
 \end{enumerate}
