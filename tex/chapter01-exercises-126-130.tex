@@ -14,12 +14,9 @@
                   \node[state, initial] (q0) {};
                   \node[state, right of=q0] (q1) {};
                   \draw
-                  (q0) edge[bend left, above] node{$1 \slash 0$} (q1)
-                  (q0) edge[bend left, below] node{$0 \slash 1$} (q1)
-                  (q1) edge[bend left, above] node{$1 \slash 0$} (q0)
-                  (q1) edge[bend left, below] node{$0 \slash 1$} (q0);
+                  (q0) edge[bend left, above] node{$\genfrac{}{}{0pt}{}{1 \slash 0}{0 \slash 1}$} (q1)
+                  (q1) edge[bend left, below] node{$\genfrac{}{}{0pt}{}{1 \slash 1}{0 \slash 0}$} (q0);
               \end{tikzpicture}
-              \caption{DFA recognizing $C$}
           \end{figure}
 
     \item [1.28]
