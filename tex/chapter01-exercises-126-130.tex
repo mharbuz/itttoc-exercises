@@ -1,12 +1,12 @@
 \begin{enumerate}
 
     \item [1.26]
-
+          
           Using the solution you gave to Exercise 1.25, give a formal description of the machines $T_1$ and $T_2$ depicted in Exercise 1.24.
-
+          
     \item [1.27]
           Read the informal definition of the finite state transducer given in Exercise 1.24. Give the state diagram of an FST with the following behavior. Its input and output alphabets are $\{0,1\}$. Its output string is identical to the input string on the even positions but inverted on the odd positions. For example, on input $0000111$ it should output $1010010$.
-
+          
           \begin{figure}[H]
               \centering
               \begin{tikzpicture}[
@@ -18,7 +18,7 @@
                   (q1) edge[bend left, below] node{$\genfrac{}{}{0pt}{}{1 \slash 1}{0 \slash 0}$} (q0);
               \end{tikzpicture}
           \end{figure}
-
+          
     \item [1.28]
           Convert the following regular expressions to NFAs using the procedure given in Theorem 1.54. In all parts, $\Sigma=\{a,b\}$. \begin{enumerate}
               \item $a(abb)^\ast \cup b$
@@ -32,14 +32,21 @@
               \item $A_2 =\{www|~w \in \{a,b\}^\ast\}$
               \item $A_3 = \{ a^{2^n} | ~n \geq 0\}$  (Here, $a^{2^n}$ means a string of $2^n$ $a$’s.)
           \end{enumerate}
-
+          
           \begin{enumerate}
               \item Let $p$ be the pumping length, and consider the string $0^p 1^p 2^p$. We can pump one symbol at a time ($0$, $1$ or $2$) but it changes the number of symbols of that type. So, the string is not in the language. Or we can pump two different symbols at a time (zeros and ones or ones and twos) but the order of symbols will change.
-
+                    
                     Therefore, $A_1$ is not regular.
-
+                    
               \item Let $w$ be any string of length $p$ with form $a^{p-1}ba^{p-1}ba^{p-1}b$. We can pump part of string with only one $b$, but it will change the number of $b$'s in the string but number of $b$'s won't be divided by 3. Therefore, $A_2$ is not regular.
-
+                    
               \item Choose s to be the string $a^{2^p}$. Because $s$ is a member of $A_3$ and $s$ is longer than $p$, can be split into three pieces, $s = xyz$. $|xy|\geq p$. Furthermore, $p < 2^p$ and so $|y| < 2^p$. Therefore, $|xyyz| = |xyz|+|y| < 2^p+2^p =2^{p+1}$. $|y| > 0$ so $2^p < |xyyz| < 2^{p+1}$. The length of $xyyz$ cannot be a power of $2$. Hence $xyyz$ is not a member of $A_3$, a contradiction.Therefore, $A_3$ is not regular.
           \end{enumerate}
+          
+    \item [1.30]
+          
+          Describe the error in the following "proof" that $0^\ast1^\ast$ is not a regular language. (An error must exist because $0^\ast1^\ast$ is regular.) The proof is by contradiction. Assume that $0^\ast1^\ast$ is regular. Let $p$ be the pumping length for $0^\ast1^\ast$ given by the pumping lemma. Choose s to be the string $0^p1^p$. You know that $s$ is a member of $0^\ast1^\ast$, but Example 1.73 shows that $s$ cannot be pumped. Thus you have a contradiction. So $0^\ast1^\ast$ is not regular.
+          
+          We can split s into three pieces, $s = xyz$ with $y$ contains only $0$'s or only $1$'s. Then, we can pump $y$ and the number of $0$'s or $1$'s will change. Therefore, $s$ isn't good choice for pumping lemma $0^\ast1^\ast$ can be regular.
+          
 \end{enumerate}
