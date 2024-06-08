@@ -26,9 +26,14 @@
             
             Let $\Sigma = \{0,1,+,=\}$ and 
             
-            $$ADD = \{x=y+z~|~x,y,z~\text{are binary integers, and}~ x~ \text{is the sum of}~ y ~\text{and}~ z\}.$$
+            $$ADD = \{a=b+c~|~a,b,c~\text{are binary integers, and}~ a~ \text{is the sum of}~ b ~\text{and}~ c\}.$$
             
             Show that $ADD$ is not regular.
+            
+            Let $p$ from pumping lemma be $p'$. Let construct word from $ADD$ in form $10^p1 = 10^{p+1} + 1$.
+            when we divide word $s$ to $x,y,z$ from pumping lemma we can get $y$ only without $=$ or $+$ (in other case we get word with more than one $=$, $+$ sign which isn't in language $ADD$).
+            
+            So we can pum only $a$ or $b$. But when we change only sum or only one of factors we get word which isn't in $ADD$.
             
       \item [1.54]
             
